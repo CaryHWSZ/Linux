@@ -1,0 +1,609 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V5.30.2.51295/W32 for ARM     28/Dec/2014  20:59:02 #
+# Copyright 1999-2009 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    uCOS-II\Ports\ARM-Cortex-M3\Generic\IAR\os_cpu_c.c       #
+#    Command line =  C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    uCOS-II\Ports\ARM-Cortex-M3\Generic\IAR\os_cpu_c.c -lCN  #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\Flash\List\ -o   #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\Flash\Obj\       #
+#                    --no_unroll --no_inline --no_tbaa --no_scheduling        #
+#                    --debug --endian=little --cpu=Cortex-M3 -e --fpu=None    #
+#                    --dlib_config "F:\Program Files (x86)\IAR                #
+#                    Systems\Embedded Workbench 5.4\arm\INC\DLib_Config_Norma #
+#                    l.h" -I C:\Users\Administrator\Desktop\uCOS-II\Micrium\S #
+#                    oftware\EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\ -I      #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\BSP\ -I       #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\C #
+#                    PU\ST\STM32\inc\ -I C:\Users\Administrator\Desktop\uCOS- #
+#                    II\Micrium\Software\EvalBoards\ST\STM32-SK\IAR\OS-Probe- #
+#                    LCD\..\..\..\..\..\uC-CPU\ -I                            #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-CPU\ARM-Cortex-M3\IAR\ -I                              #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-LCD\Source\ -I C:\Users\Administrator\Desktop\uCOS-II\ #
+#                    Micrium\Software\EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD #
+#                    \..\..\..\..\..\uC-LIB\ -I C:\Users\Administrator\Deskto #
+#                    p\uCOS-II\Micrium\Software\EvalBoards\ST\STM32-SK\IAR\OS #
+#                    -Probe-LCD\..\..\..\..\..\uCOS-II\Ports\ARM-Cortex-M3\Ge #
+#                    neric\IAR\ -I C:\Users\Administrator\Desktop\uCOS-II\Mic #
+#                    rium\Software\EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\.. #
+#                    \..\..\..\..\uCOS-II\Source\ -I                          #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-Probe\Target\Communication\Generic\RS-232\Source\ -I   #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-Probe\Target\Communication\Generic\RS-232\Ports\ST\STM #
+#                    32\ -I C:\Users\Administrator\Desktop\uCOS-II\Micrium\So #
+#                    ftware\EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\ #
+#                    ..\..\uC-Probe\Target\Communication\Generic\Source\ -I   #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-Probe\Target\Plugins\uCOS-II\ -I "F:\Program Files     #
+#                    (x86)\IAR Systems\Embedded Workbench 5.4\arm\INC\" -Om   #
+#    List file    =  C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\Flash\List\os_cp #
+#                    u_c.lst                                                  #
+#    Object file  =  C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\Flash\Obj\os_cpu #
+#                    _c.o                                                     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\uCOS-II\Ports\ARM-Cortex-M3\Generic\IAR\os_cpu_c.c
+      1          /*
+      2          *********************************************************************************************************
+      3          *                                               uC/OS-II
+      4          *                                         The Real-Time Kernel
+      5          *
+      6          *
+      7          *                                (c) Copyright 2006, Micrium, Weston, FL
+      8          *                                          All Rights Reserved
+      9          *
+     10          *                                           ARM Cortex-M3 Port
+     11          *
+     12          * File      : OS_CPU_C.C
+     13          * Version   : V2.86
+     14          * By        : Jean J. Labrosse
+     15          *
+     16          * For       : ARMv7M Cortex-M3
+     17          * Mode      : Thumb2
+     18          * Toolchain : IAR EWARM
+     19          *********************************************************************************************************
+     20          */
+     21          
+     22          #define  OS_CPU_GLOBALS
+     23          #include <ucos_ii.h>
+     24          
+     25          /*
+     26          *********************************************************************************************************
+     27          *                                          LOCAL VARIABLES
+     28          *********************************************************************************************************
+     29          */
+     30          
+     31          #if OS_TMR_EN > 0
+
+   \                                 In section .bss, align 2
+     32          static  INT16U  OSTmrCtr;
+   \                     OSTmrCtr:
+   \   00000000                      DS8 2
+     33          #endif
+     34          
+     35          /*
+     36          *********************************************************************************************************
+     37          *                                          SYS TICK DEFINES
+     38          *********************************************************************************************************
+     39          */
+     40          
+     41          #define  OS_CPU_CM3_NVIC_ST_CTRL    (*((volatile INT32U *)0xE000E010))   /* SysTick Ctrl & Status Reg. */
+     42          #define  OS_CPU_CM3_NVIC_ST_RELOAD  (*((volatile INT32U *)0xE000E014))   /* SysTick Reload  Value Reg. */
+     43          #define  OS_CPU_CM3_NVIC_ST_CURRENT (*((volatile INT32U *)0xE000E018))   /* SysTick Current Value Reg. */
+     44          #define  OS_CPU_CM3_NVIC_ST_CAL     (*((volatile INT32U *)0xE000E01C))   /* SysTick Cal     Value Reg. */
+     45          
+     46          #define  OS_CPU_CM3_NVIC_ST_CTRL_COUNT                    0x00010000     /* Count flag.                */
+     47          #define  OS_CPU_CM3_NVIC_ST_CTRL_CLK_SRC                  0x00000004     /* Clock Source.              */
+     48          #define  OS_CPU_CM3_NVIC_ST_CTRL_INTEN                    0x00000002     /* Interrupt enable.          */
+     49          #define  OS_CPU_CM3_NVIC_ST_CTRL_ENABLE                   0x00000001     /* Counter mode.              */
+     50          
+     51          /*
+     52          *********************************************************************************************************
+     53          *                                       OS INITIALIZATION HOOK
+     54          *                                            (BEGINNING)
+     55          *
+     56          * Description: This function is called by OSInit() at the beginning of OSInit().
+     57          *
+     58          * Arguments  : none
+     59          *
+     60          * Note(s)    : 1) Interrupts should be disabled during this call.
+     61          *********************************************************************************************************
+     62          */
+     63          #if OS_CPU_HOOKS_EN > 0 && OS_VERSION > 203
+
+   \                                 In section .text, align 2, keep-with-next
+     64          void  OSInitHookBegin (void)
+     65          {
+     66          #if OS_TMR_EN > 0
+     67              OSTmrCtr = 0;
+   \                     OSInitHookBegin:
+   \   00000000   ....               LDR.N    R0,??DataTable1  ;; OSTmrCtr
+   \   00000002   0021               MOVS     R1,#+0
+   \   00000004   0180               STRH     R1,[R0, #+0]
+     68          #endif
+     69          }
+   \   00000006   7047               BX       LR               ;; return
+     70          #endif
+     71          
+     72          /*
+     73          *********************************************************************************************************
+     74          *                                       OS INITIALIZATION HOOK
+     75          *                                               (END)
+     76          *
+     77          * Description: This function is called by OSInit() at the end of OSInit().
+     78          *
+     79          * Arguments  : none
+     80          *
+     81          * Note(s)    : 1) Interrupts should be disabled during this call.
+     82          *********************************************************************************************************
+     83          */
+     84          #if OS_CPU_HOOKS_EN > 0 && OS_VERSION > 203
+
+   \                                 In section .text, align 2, keep-with-next
+     85          void  OSInitHookEnd (void)
+     86          {
+     87          }
+   \                     OSInitHookEnd:
+   \   00000000   7047               BX       LR               ;; return
+     88          #endif
+     89          
+     90          /*
+     91          *********************************************************************************************************
+     92          *                                          TASK CREATION HOOK
+     93          *
+     94          * Description: This function is called when a task is created.
+     95          *
+     96          * Arguments  : ptcb   is a pointer to the task control block of the task being created.
+     97          *
+     98          * Note(s)    : 1) Interrupts are disabled during this call.
+     99          *********************************************************************************************************
+    100          */
+    101          #if OS_CPU_HOOKS_EN > 0
+
+   \                                 In section .text, align 2, keep-with-next
+    102          void  OSTaskCreateHook (OS_TCB *ptcb)
+    103          {
+    104          #if OS_APP_HOOKS_EN > 0
+    105              App_TaskCreateHook(ptcb);
+   \                     OSTaskCreateHook:
+   \   00000000   ........           B.W      App_TaskCreateHook
+    106          #else
+    107              (void)ptcb;                                  /* Prevent compiler warning                           */
+    108          #endif
+    109          }
+    110          #endif
+    111          
+    112          
+    113          /*
+    114          *********************************************************************************************************
+    115          *                                           TASK DELETION HOOK
+    116          *
+    117          * Description: This function is called when a task is deleted.
+    118          *
+    119          * Arguments  : ptcb   is a pointer to the task control block of the task being deleted.
+    120          *
+    121          * Note(s)    : 1) Interrupts are disabled during this call.
+    122          *********************************************************************************************************
+    123          */
+    124          #if OS_CPU_HOOKS_EN > 0
+
+   \                                 In section .text, align 2, keep-with-next
+    125          void  OSTaskDelHook (OS_TCB *ptcb)
+    126          {
+    127          #if OS_APP_HOOKS_EN > 0
+    128              App_TaskDelHook(ptcb);
+   \                     OSTaskDelHook:
+   \   00000000   ........           B.W      App_TaskDelHook
+    129          #else
+    130              (void)ptcb;                                  /* Prevent compiler warning                           */
+    131          #endif
+    132          }
+    133          #endif
+    134          
+    135          /*
+    136          *********************************************************************************************************
+    137          *                                             IDLE TASK HOOK
+    138          *
+    139          * Description: This function is called by the idle task.  This hook has been added to allow you to do
+    140          *              such things as STOP the CPU to conserve power.
+    141          *
+    142          * Arguments  : none
+    143          *
+    144          * Note(s)    : 1) Interrupts are enabled during this call.
+    145          *********************************************************************************************************
+    146          */
+    147          #if OS_CPU_HOOKS_EN > 0 && OS_VERSION >= 251
+
+   \                                 In section .text, align 2, keep-with-next
+    148          void  OSTaskIdleHook (void)
+    149          {
+    150          #if OS_APP_HOOKS_EN > 0
+    151              App_TaskIdleHook();
+   \                     OSTaskIdleHook:
+   \   00000000   ........           B.W      App_TaskIdleHook
+    152          #endif
+    153          }
+    154          #endif
+    155          
+    156          /*
+    157          *********************************************************************************************************
+    158          *                                           STATISTIC TASK HOOK
+    159          *
+    160          * Description: This function is called every second by uC/OS-II's statistics task.  This allows your
+    161          *              application to add functionality to the statistics task.
+    162          *
+    163          * Arguments  : none
+    164          *********************************************************************************************************
+    165          */
+    166          
+    167          #if OS_CPU_HOOKS_EN > 0
+
+   \                                 In section .text, align 2, keep-with-next
+    168          void  OSTaskStatHook (void)
+    169          {
+    170          #if OS_APP_HOOKS_EN > 0
+    171              App_TaskStatHook();
+   \                     OSTaskStatHook:
+   \   00000000   ........           B.W      App_TaskStatHook
+    172          #endif
+    173          }
+    174          #endif
+    175          
+    176          /*
+    177          *********************************************************************************************************
+    178          *                                        INITIALIZE A TASK'S STACK
+    179          *
+    180          * Description: This function is called by either OSTaskCreate() or OSTaskCreateExt() to initialize the
+    181          *              stack frame of the task being created.  This function is highly processor specific.
+    182          *
+    183          * Arguments  : task          is a pointer to the task code
+    184          *
+    185          *              p_arg         is a pointer to a user supplied data area that will be passed to the task
+    186          *                            when the task first executes.
+    187          *
+    188          *              ptos          is a pointer to the top of stack.  It is assumed that 'ptos' points to
+    189          *                            a 'free' entry on the task stack.  If OS_STK_GROWTH is set to 1 then
+    190          *                            'ptos' will contain the HIGHEST valid address of the stack.  Similarly, if
+    191          *                            OS_STK_GROWTH is set to 0, the 'ptos' will contains the LOWEST valid address
+    192          *                            of the stack.
+    193          *
+    194          *              opt           specifies options that can be used to alter the behavior of OSTaskStkInit().
+    195          *                            (see uCOS_II.H for OS_TASK_OPT_xxx).
+    196          *
+    197          * Returns    : Always returns the location of the new top-of-stack once the processor registers have
+    198          *              been placed on the stack in the proper order.
+    199          *
+    200          * Note(s)    : 1) Interrupts are enabled when your task starts executing.
+    201          *              2) All tasks run in Thread mode, using process stack.
+    202          *********************************************************************************************************
+    203          */
+    204          
+
+   \                                 In section .text, align 2, keep-with-next
+    205          OS_STK *OSTaskStkInit (void (*task)(void *p_arg), void *p_arg, OS_STK *ptos, INT16U opt)
+    206          {
+   \                     OSTaskStkInit:
+   \   00000000   0346               MOV      R3,R0
+   \   00000002   1046               MOV      R0,R2
+    207              OS_STK *stk;
+    208          
+    209          
+    210              (void)opt;                                   /* 'opt' is not used, prevent warning                 */
+    211              stk       = ptos;                            /* Load stack pointer                                 */
+    212          
+    213                                                           /* Registers stacked as if auto-saved on exception    */
+    214              *(stk)    = (INT32U)0x01000000L;             /* xPSR                                               */
+   \   00000004   4FF08072           MOV      R2,#+16777216
+   \   00000008   0260               STR      R2,[R0, #+0]
+    215              *(--stk)  = (INT32U)task;                    /* Entry Point                                        */
+   \   0000000A   40F8043D           STR      R3,[R0, #-4]!
+    216              *(--stk)  = (INT32U)0xFFFFFFFEL;             /* R14 (LR) (init value will cause fault if ever used)*/
+   \   0000000E   6FF00102           MVN      R2,#+1
+   \   00000012   40F8042D           STR      R2,[R0, #-4]!
+    217              *(--stk)  = (INT32U)0x12121212L;             /* R12                                                */
+   \   00000016   4FF01232           MOV      R2,#+303174162
+   \   0000001A   40F8042D           STR      R2,[R0, #-4]!
+    218              *(--stk)  = (INT32U)0x03030303L;             /* R3                                                 */
+   \   0000001E   4FF00332           MOV      R2,#+50529027
+   \   00000022   40F8042D           STR      R2,[R0, #-4]!
+    219              *(--stk)  = (INT32U)0x02020202L;             /* R2                                                 */
+   \   00000026   4FF00232           MOV      R2,#+33686018
+   \   0000002A   40F8042D           STR      R2,[R0, #-4]!
+    220              *(--stk)  = (INT32U)0x01010101L;             /* R1                                                 */
+   \   0000002E   4FF00132           MOV      R2,#+16843009
+   \   00000032   40F8042D           STR      R2,[R0, #-4]!
+    221              *(--stk)  = (INT32U)p_arg;                   /* R0 : argument                                      */
+   \   00000036   40F8041D           STR      R1,[R0, #-4]!
+    222          
+    223                                                           /* Remaining registers saved on process stack         */
+    224              *(--stk)  = (INT32U)0x11111111L;             /* R11                                                */
+   \   0000003A   4FF01131           MOV      R1,#+286331153
+   \   0000003E   40F8041D           STR      R1,[R0, #-4]!
+    225              *(--stk)  = (INT32U)0x10101010L;             /* R10                                                */
+   \   00000042   4FF01031           MOV      R1,#+269488144
+   \   00000046   40F8041D           STR      R1,[R0, #-4]!
+    226              *(--stk)  = (INT32U)0x09090909L;             /* R9                                                 */
+   \   0000004A   4FF00931           MOV      R1,#+151587081
+   \   0000004E   40F8041D           STR      R1,[R0, #-4]!
+    227              *(--stk)  = (INT32U)0x08080808L;             /* R8                                                 */
+   \   00000052   4FF00831           MOV      R1,#+134744072
+   \   00000056   40F8041D           STR      R1,[R0, #-4]!
+    228              *(--stk)  = (INT32U)0x07070707L;             /* R7                                                 */
+   \   0000005A   4FF00731           MOV      R1,#+117901063
+   \   0000005E   40F8041D           STR      R1,[R0, #-4]!
+    229              *(--stk)  = (INT32U)0x06060606L;             /* R6                                                 */
+   \   00000062   4FF00631           MOV      R1,#+101058054
+   \   00000066   40F8041D           STR      R1,[R0, #-4]!
+    230              *(--stk)  = (INT32U)0x05050505L;             /* R5                                                 */
+   \   0000006A   4FF00531           MOV      R1,#+84215045
+   \   0000006E   40F8041D           STR      R1,[R0, #-4]!
+    231              *(--stk)  = (INT32U)0x04040404L;             /* R4                                                 */
+   \   00000072   4FF00431           MOV      R1,#+67372036
+   \   00000076   40F8041D           STR      R1,[R0, #-4]!
+    232          
+    233              return (stk);
+   \   0000007A   7047               BX       LR               ;; return
+    234          }
+    235          
+    236          /*
+    237          *********************************************************************************************************
+    238          *                                           TASK SWITCH HOOK
+    239          *
+    240          * Description: This function is called when a task switch is performed.  This allows you to perform other
+    241          *              operations during a context switch.
+    242          *
+    243          * Arguments  : none
+    244          *
+    245          * Note(s)    : 1) Interrupts are disabled during this call.
+    246          *              2) It is assumed that the global pointer 'OSTCBHighRdy' points to the TCB of the task that
+    247          *                 will be 'switched in' (i.e. the highest priority task) and, 'OSTCBCur' points to the
+    248          *                 task being switched out (i.e. the preempted task).
+    249          *********************************************************************************************************
+    250          */
+    251          #if (OS_CPU_HOOKS_EN > 0) && (OS_TASK_SW_HOOK_EN > 0)
+
+   \                                 In section .text, align 2, keep-with-next
+    252          void  OSTaskSwHook (void)
+    253          {
+    254          #if OS_APP_HOOKS_EN > 0
+    255              App_TaskSwHook();
+   \                     OSTaskSwHook:
+   \   00000000   ........           B.W      App_TaskSwHook
+    256          #endif
+    257          }
+    258          #endif
+    259          
+    260          /*
+    261          *********************************************************************************************************
+    262          *                                           OS_TCBInit() HOOK
+    263          *
+    264          * Description: This function is called by OS_TCBInit() after setting up most of the TCB.
+    265          *
+    266          * Arguments  : ptcb    is a pointer to the TCB of the task being created.
+    267          *
+    268          * Note(s)    : 1) Interrupts may or may not be ENABLED during this call.
+    269          *********************************************************************************************************
+    270          */
+    271          #if OS_CPU_HOOKS_EN > 0 && OS_VERSION > 203
+
+   \                                 In section .text, align 2, keep-with-next
+    272          void  OSTCBInitHook (OS_TCB *ptcb)
+    273          {
+    274          #if OS_APP_HOOKS_EN > 0
+    275              App_TCBInitHook(ptcb);
+   \                     OSTCBInitHook:
+   \   00000000   ........           B.W      App_TCBInitHook
+    276          #else
+    277              (void)ptcb;                                  /* Prevent compiler warning                           */
+    278          #endif
+    279          }
+    280          #endif
+    281          
+    282          
+    283          /*
+    284          *********************************************************************************************************
+    285          *                                               TICK HOOK
+    286          *
+    287          * Description: This function is called every tick.
+    288          *
+    289          * Arguments  : none
+    290          *
+    291          * Note(s)    : 1) Interrupts may or may not be ENABLED during this call.
+    292          *********************************************************************************************************
+    293          */
+    294          #if (OS_CPU_HOOKS_EN > 0) && (OS_TIME_TICK_HOOK_EN > 0)
+
+   \                                 In section .text, align 2, keep-with-next
+    295          void  OSTimeTickHook (void)
+    296          {
+   \                     OSTimeTickHook:
+   \   00000000   80B5               PUSH     {R7,LR}
+    297          #if OS_APP_HOOKS_EN > 0
+    298              App_TimeTickHook();
+   \   00000002   ........           BL       App_TimeTickHook
+    299          #endif
+    300          
+    301          #if OS_TMR_EN > 0
+    302              OSTmrCtr++;
+   \   00000006   ....               LDR.N    R0,??DataTable1  ;; OSTmrCtr
+   \   00000008   0188               LDRH     R1,[R0, #+0]
+   \   0000000A   491C               ADDS     R1,R1,#+1
+   \   0000000C   0180               STRH     R1,[R0, #+0]
+    303              if (OSTmrCtr >= (OS_TICKS_PER_SEC / OS_TMR_CFG_TICKS_PER_SEC)) {
+   \   0000000E   89B2               UXTH     R1,R1
+   \   00000010   6429               CMP      R1,#+100
+   \   00000012   03D3               BCC.N    ??OSTimeTickHook_0
+    304                  OSTmrCtr = 0;
+   \   00000014   0021               MOVS     R1,#+0
+   \   00000016   0180               STRH     R1,[R0, #+0]
+    305                  OSTmrSignal();
+   \   00000018   ........           BL       OSTmrSignal
+    306              }
+    307          #endif
+    308          }
+   \                     ??OSTimeTickHook_0:
+   \   0000001C   01BD               POP      {R0,PC}          ;; return
+    309          #endif
+    310          
+    311          
+    312          
+    313          /*
+    314          *********************************************************************************************************
+    315          *                                         OS_CPU_SysTickHandler()
+    316          *
+    317          * Description: Handle the system tick (SysTick) interrupt, which is used to generate the uC/OS-II tick
+    318          *              interrupt.
+    319          *
+    320          * Arguments  : none.
+    321          *
+    322          * Note(s)    : 1) This function MUST be placed on entry 15 of the Cortex-M3 vector table.
+    323          *********************************************************************************************************
+    324          */
+    325          
+
+   \                                 In section .text, align 4, keep-with-next
+    326          void  OS_CPU_SysTickHandler (void)
+    327          {
+   \                     OS_CPU_SysTickHandler:
+   \   00000000   80B5               PUSH     {R7,LR}
+    328              OS_CPU_SR  cpu_sr;
+    329          
+    330          
+    331              OS_ENTER_CRITICAL();                         /* Tell uC/OS-II that we are starting an ISR          */
+   \   00000002   ........           BL       OS_CPU_SR_Save
+    332              OSIntNesting++;
+   \   00000006   0649               LDR.N    R1,??OS_CPU_SysTickHandler_0  ;; OSIntNesting
+   \   00000008   0A78               LDRB     R2,[R1, #+0]
+   \   0000000A   521C               ADDS     R2,R2,#+1
+   \   0000000C   0A70               STRB     R2,[R1, #+0]
+    333              OS_EXIT_CRITICAL();
+   \   0000000E   ........           BL       OS_CPU_SR_Restore
+    334          
+    335              OSTimeTick();                                /* Call uC/OS-II's OSTimeTick()                       */
+   \   00000012   ........           BL       OSTimeTick
+    336          
+    337              OSIntExit();                                 /* Tell uC/OS-II that we are leaving the ISR          */
+   \   00000016   BDE80140           POP      {R0,LR}
+   \   0000001A   ........           B.W      OSIntExit
+   \   0000001E   00BF               Nop      
+   \                     ??OS_CPU_SysTickHandler_0:
+   \   00000020   ........           DC32     OSIntNesting
+    338          }
+    339          
+    340          
+    341          /*
+    342          *********************************************************************************************************
+    343          *                                          OS_CPU_SysTickInit()
+    344          *
+    345          * Description: Initialize the SysTick.
+    346          *
+    347          * Arguments  : none.
+    348          *
+    349          * Note(s)    : 1) This function MUST be called after OSStart() & after processor initialization.
+    350          *********************************************************************************************************
+    351          */
+    352          
+
+   \                                 In section .text, align 4, keep-with-next
+    353          void  OS_CPU_SysTickInit (void)
+    354          {
+   \                     OS_CPU_SysTickInit:
+   \   00000000   80B5               PUSH     {R7,LR}
+    355              INT32U  cnts;
+    356          
+    357          
+    358              cnts = OS_CPU_SysTickClkFreq() / OS_TICKS_PER_SEC;
+   \   00000002   ........           BL       OS_CPU_SysTickClkFreq
+   \   00000006   4FF47A71           MOV      R1,#+1000
+   \   0000000A   B0FBF1F0           UDIV     R0,R0,R1
+    359          
+    360              OS_CPU_CM3_NVIC_ST_RELOAD = (cnts - 1);
+   \   0000000E   0649               LDR.N    R1,??OS_CPU_SysTickInit_0  ;; 0xe000e010
+   \   00000010   401E               SUBS     R0,R0,#+1
+   \   00000012   4860               STR      R0,[R1, #+4]
+    361                                                           /* Enable timer.                                      */
+    362              OS_CPU_CM3_NVIC_ST_CTRL  |= OS_CPU_CM3_NVIC_ST_CTRL_CLK_SRC | OS_CPU_CM3_NVIC_ST_CTRL_ENABLE;
+   \   00000014   0868               LDR      R0,[R1, #+0]
+   \   00000016   40F00500           ORR      R0,R0,#0x5
+   \   0000001A   0860               STR      R0,[R1, #+0]
+    363                                                           /* Enable timer interrupt.                            */
+    364              OS_CPU_CM3_NVIC_ST_CTRL  |= OS_CPU_CM3_NVIC_ST_CTRL_INTEN;
+   \   0000001C   0868               LDR      R0,[R1, #+0]
+   \   0000001E   40F00200           ORR      R0,R0,#0x2
+   \   00000022   0860               STR      R0,[R1, #+0]
+    365          }
+   \   00000024   01BD               POP      {R0,PC}          ;; return
+   \   00000026   00BF               Nop      
+   \                     ??OS_CPU_SysTickInit_0:
+   \   00000028   10E000E0           DC32     0xe000e010
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable1:
+   \   00000000   ........           DC32     OSTmrCtr
+
+   Maximum stack usage in bytes:
+
+     Function              .cstack
+     --------              -------
+     OSInitHookBegin            0
+     OSInitHookEnd              0
+     OSTCBInitHook              8
+     OSTaskCreateHook           8
+     OSTaskDelHook              8
+     OSTaskIdleHook             8
+     OSTaskStatHook             8
+     OSTaskStkInit              0
+     OSTaskSwHook               8
+     OSTimeTickHook             8
+     OS_CPU_SysTickHandler      8
+     OS_CPU_SysTickInit         8
+
+
+   Section sizes:
+
+     Function/Label        Bytes
+     --------------        -----
+     OSTmrCtr                 2
+     OSInitHookBegin          8
+     OSInitHookEnd            2
+     OSTaskCreateHook         4
+     OSTaskDelHook            4
+     OSTaskIdleHook           4
+     OSTaskStatHook           4
+     OSTaskStkInit          124
+     OSTaskSwHook             4
+     OSTCBInitHook            4
+     OSTimeTickHook          30
+     OS_CPU_SysTickHandler   36
+     OS_CPU_SysTickInit      44
+     ??DataTable1             4
+
+ 
+   2 bytes in section .bss
+ 272 bytes in section .text
+ 
+ 272 bytes of CODE memory
+   2 bytes of DATA memory
+
+Errors: none
+Warnings: none

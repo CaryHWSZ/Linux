@@ -1,0 +1,1800 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V5.30.2.51295/W32 for ARM     28/Dec/2014  20:59:01 #
+# Copyright 1999-2009 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\app.c            #
+#    Command line =  C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\app.c -lCN       #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\Flash\List\ -o   #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\Flash\Obj\       #
+#                    --no_unroll --no_inline --no_tbaa --no_scheduling        #
+#                    --debug --endian=little --cpu=Cortex-M3 -e --fpu=None    #
+#                    --dlib_config "F:\Program Files (x86)\IAR                #
+#                    Systems\Embedded Workbench 5.4\arm\INC\DLib_Config_Norma #
+#                    l.h" -I C:\Users\Administrator\Desktop\uCOS-II\Micrium\S #
+#                    oftware\EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\ -I      #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\BSP\ -I       #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\C #
+#                    PU\ST\STM32\inc\ -I C:\Users\Administrator\Desktop\uCOS- #
+#                    II\Micrium\Software\EvalBoards\ST\STM32-SK\IAR\OS-Probe- #
+#                    LCD\..\..\..\..\..\uC-CPU\ -I                            #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-CPU\ARM-Cortex-M3\IAR\ -I                              #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-LCD\Source\ -I C:\Users\Administrator\Desktop\uCOS-II\ #
+#                    Micrium\Software\EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD #
+#                    \..\..\..\..\..\uC-LIB\ -I C:\Users\Administrator\Deskto #
+#                    p\uCOS-II\Micrium\Software\EvalBoards\ST\STM32-SK\IAR\OS #
+#                    -Probe-LCD\..\..\..\..\..\uCOS-II\Ports\ARM-Cortex-M3\Ge #
+#                    neric\IAR\ -I C:\Users\Administrator\Desktop\uCOS-II\Mic #
+#                    rium\Software\EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\.. #
+#                    \..\..\..\..\uCOS-II\Source\ -I                          #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-Probe\Target\Communication\Generic\RS-232\Source\ -I   #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-Probe\Target\Communication\Generic\RS-232\Ports\ST\STM #
+#                    32\ -I C:\Users\Administrator\Desktop\uCOS-II\Micrium\So #
+#                    ftware\EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\ #
+#                    ..\..\uC-Probe\Target\Communication\Generic\Source\ -I   #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-Probe\Target\Plugins\uCOS-II\ -I "F:\Program Files     #
+#                    (x86)\IAR Systems\Embedded Workbench 5.4\arm\INC\" -Om   #
+#    List file    =  C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\Flash\List\app.l #
+#                    st                                                       #
+#    Object file  =  C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\Flash\Obj\app.o  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\app.c
+      1          /*
+      2          *********************************************************************************************************
+      3          *                                              EXAMPLE CODE
+      4          *
+      5          *                          (c) Copyright 2003-2007; Micrium, Inc.; Weston, FL
+      6          *
+      7          *               All rights reserved.  Protected by international copyright laws.
+      8          *               Knowledge of the source code may NOT be used to develop a similar product.
+      9          *               Please help us continue to provide the Embedded community with the finest
+     10          *               software available.  Your honesty is greatly appreciated.
+     11          *********************************************************************************************************
+     12          */
+     13          
+     14          /*
+     15          *********************************************************************************************************
+     16          *
+     17          *                                            EXAMPLE CODE
+     18          *
+     19          *                                     ST Microelectronics STM32
+     20          *                                              with the
+     21          *                                   IAR STM32-SK Evaluation Board
+     22          *
+     23          * Filename      : app.c
+     24          * Version       : V1.10
+     25          * Programmer(s) : BAN
+     26          *********************************************************************************************************
+     27          */
+     28          
+     29          /*
+     30          *********************************************************************************************************
+     31          *                                             INCLUDE FILES
+     32          *********************************************************************************************************
+     33          */
+     34          
+     35          #include <includes.h>
+     36          
+     37          /*
+     38          *********************************************************************************************************
+     39          *                                            LOCAL DEFINES
+     40          *********************************************************************************************************
+     41          */
+     42          
+     43          
+     44          /*
+     45          *********************************************************************************************************
+     46          *                                       LOCAL GLOBAL VARIABLES
+     47          *********************************************************************************************************
+     48          */
+     49          
+
+   \                                 In section .bss, align 4
+     50          static  OS_STK          App_TaskStartStk[APP_TASK_START_STK_SIZE];
+   \                     App_TaskStartStk:
+   \   00000000                      DS8 512
+
+   \                                 In section .bss, align 4
+     51          static  OS_STK          App_TaskUserIFStk[APP_TASK_USER_IF_STK_SIZE];
+   \                     App_TaskUserIFStk:
+   \   00000000                      DS8 1024
+   \   00000400                      DS8 512
+     52          static  OS_STK          App_TaskKbdStk[APP_TASK_KBD_STK_SIZE];
+     53          
+     54          #if (APP_LCD_EN == DEF_ENABLED)
+
+   \                                 In section .bss, align 4
+     55          static  OS_EVENT       *App_UserIFMbox;
+   \                     App_UserIFMbox:
+   \   00000000                      DS8 4
+
+   \                                 In section .bss, align 4
+     56          static  CPU_CHAR        App_LCDLine1[17];
+   \                     App_LCDLine1:
+   \   00000000                      DS8 20
+
+   \                                 In section .bss, align 4
+     57          static  CPU_CHAR        App_LCDLine2[17];
+   \                     App_LCDLine2:
+   \   00000000                      DS8 20
+     58          #endif
+     59          
+     60          #if ((APP_OS_PROBE_EN   == DEF_ENABLED) && \
+     61               (APP_PROBE_COM_EN  == DEF_ENABLED) && \
+     62               (PROBE_COM_STAT_EN == DEF_ENABLED))
+
+   \                                 In section .bss, align 4
+     63          static  CPU_FP32        App_ProbeComRxPktSpd;
+     64          static  CPU_FP32        App_ProbeComTxPktSpd;
+     65          static  CPU_FP32        App_ProbeComTxSymSpd;
+     66          static  CPU_FP32        App_ProbeComTxSymByteSpd;
+     67          
+     68          static  CPU_INT32U      App_ProbeComRxPktLast;
+     69          static  CPU_INT32U      App_ProbeComTxPktLast;
+     70          static  CPU_INT32U      App_ProbeComTxSymLast;
+     71          static  CPU_INT32U      App_ProbeComTxSymByteLast;
+     72          
+     73          static  CPU_INT32U      App_ProbeComCtrLast;
+     74          #endif
+     75          
+     76          #if (APP_OS_PROBE_EN == DEF_ENABLED)
+     77          volatile  CPU_INT32U    App_ProbeCounts;
+     78          volatile  CPU_BOOLEAN   App_ProbeB1;
+   \                     App_ProbeB1:
+   \   00000000                      DS8 1
+     79          volatile  CPU_BOOLEAN   App_ProbeB2;
+   \                     App_ProbeB2:
+   \   00000001                      DS8 1
+     80          volatile  CPU_BOOLEAN   App_ProbeB3;
+   \                     App_ProbeB3:
+   \   00000002                      DS8 1
+     81          volatile  CPU_BOOLEAN   App_ProbeB_WakeUp;
+   \                     App_ProbeB_WakeUp:
+   \   00000003                      DS8 1
+     82          volatile  CPU_INT16U    App_ProbeADC;
+   \                     App_ProbeADC:
+   \   00000004                      DS8 2
+   \   00000006                      DS8 2
+   \   00000008                      DS8 4
+   \   0000000C                      DS8 4
+   \   00000010                      DS8 4
+   \   00000014                      DS8 4
+   \   00000018                      DS8 4
+   \   0000001C                      DS8 4
+   \   00000020                      DS8 4
+   \   00000024                      DS8 4
+   \   00000028                      DS8 4
+   \                     App_ProbeCounts:
+   \   0000002C                      DS8 4
+     83          #endif
+     84          
+     85          
+     86          /*
+     87          *********************************************************************************************************
+     88          *                                      LOCAL FUNCTION PROTOTYPES
+     89          *********************************************************************************************************
+     90          */
+     91          
+     92          static  void  App_TaskCreate             (void);
+     93          static  void  App_EventCreate            (void);
+     94          
+     95          static  void  App_TaskStart              (void        *p_arg);
+     96          static  void  App_TaskKbd                (void        *p_arg);
+     97          
+     98          #if (APP_LCD_EN == DEF_ENABLED)
+     99          static  void  App_TaskUserIF             (void        *p_arg);
+    100          static  void  App_DispScr_SignOn         (void);
+    101          static  void  App_DispScr_VersionTickRate(void);
+    102          static  void  App_DispScr_CPU            (void);
+    103          static  void  App_DispScr_CtxSw          (void);
+    104          #endif
+    105          
+    106          #if ((APP_PROBE_COM_EN == DEF_ENABLED) || \
+    107               (APP_OS_PROBE_EN  == DEF_ENABLED))
+    108          static  void  App_InitProbe              (void);
+    109          #endif
+    110          
+    111          #if (APP_OS_PROBE_EN == DEF_ENABLED)
+    112          static  void  App_ProbeCallback          (void);
+    113          #endif
+    114          
+    115          static  void  App_FormatDec              (CPU_INT08U  *pstr,
+    116                                                    CPU_INT32U   value,
+    117                                                    CPU_INT08U   digits);
+    118          
+    119          
+    120          /*
+    121          *********************************************************************************************************
+    122          *                                                main()
+    123          *
+    124          * Description : This is the standard entry point for C code.  It is assumed that your code will call
+    125          *               main() once you have performed all necessary initialization.
+    126          *
+    127          * Argument(s) : none.
+    128          *
+    129          * Return(s)   : none.
+    130          *********************************************************************************************************
+    131          */
+    132          
+
+   \                                 In section .text, align 4, keep-with-next
+    133          int  main (void)
+    134          {
+   \                     main:
+   \   00000000   80B5               PUSH     {R7,LR}
+    135              CPU_INT08U  os_err;
+    136          
+    137          
+    138              BSP_IntDisAll();                                            /* Disable all ints until we are ready to accept them.  */
+   \   00000002   ........           BL       BSP_IntDisAll
+    139          
+    140              OSInit();                                                   /* Initialize "uC/OS-II, The Real-Time Kernel".         */
+   \   00000006   ........           BL       OSInit
+    141          
+    142              os_err = OSTaskCreateExt((void (*)(void *)) App_TaskStart,  /* Create the start task.                               */
+    143                                       (void          * ) 0,
+    144                                       (OS_STK        * )&App_TaskStartStk[APP_TASK_START_STK_SIZE - 1],
+    145                                       (INT8U           ) APP_TASK_START_PRIO,
+    146                                       (INT16U          ) APP_TASK_START_PRIO,
+    147                                       (OS_STK        * )&App_TaskStartStk[0],
+    148                                       (INT32U          ) APP_TASK_START_STK_SIZE,
+    149                                       (void          * )0,
+    150                                       (INT16U          )(OS_TASK_OPT_STK_CLR | OS_TASK_OPT_STK_CHK));
+   \   0000000A   0E4A               LDR.N    R2,??main_0      ;; App_TaskStartStk
+   \   0000000C   0320               MOVS     R0,#+3
+   \   0000000E   01B5               PUSH     {R0,LR}
+   \   00000010   0021               MOVS     R1,#+0
+   \   00000012   8020               MOVS     R0,#+128
+   \   00000014   03B4               PUSH     {R0,R1}
+   \   00000016   1146               MOV      R1,R2
+   \   00000018   0320               MOVS     R0,#+3
+   \   0000001A   03B4               PUSH     {R0,R1}
+   \   0000001C   0346               MOV      R3,R0
+   \   0000001E   02F5FE72           ADD      R2,R2,#+508
+   \   00000022   0021               MOVS     R1,#+0
+   \   00000024   0848               LDR.N    R0,??main_0+0x4  ;; App_TaskStart
+   \   00000026   ........           BL       OSTaskCreateExt
+   \   0000002A   06B0               ADD      SP,SP,#+24
+   \   0000002C   8DF80000           STRB     R0,[SP, #+0]
+    151          
+    152          #if (OS_TASK_NAME_SIZE >= 11)
+    153              OSTaskNameSet(APP_TASK_START_PRIO, (CPU_INT08U *)"Start Task", &os_err);
+   \   00000030   00AA               ADD      R2,SP,#+0
+   \   00000032   0649               LDR.N    R1,??main_0+0x8  ;; `?<Constant "Start Task">`
+   \   00000034   0320               MOVS     R0,#+3
+   \   00000036   ........           BL       OSTaskNameSet
+    154          #endif
+    155          
+    156              OSStart();                                                  /* Start multitasking (i.e. give control to uC/OS-II).  */
+   \   0000003A   ........           BL       OSStart
+    157          
+    158              return (0);
+   \   0000003E   0020               MOVS     R0,#+0
+   \   00000040   02BD               POP      {R1,PC}          ;; return
+   \   00000042   00BF               Nop      
+   \                     ??main_0:
+   \   00000044   ........           DC32     App_TaskStartStk
+   \   00000048   ........           DC32     App_TaskStart
+   \   0000004C   ........           DC32     `?<Constant "Start Task">`
+    159          }
+    160          
+    161          /*
+    162          *********************************************************************************************************
+    163          *                                          App_TaskStart()
+    164          *
+    165          * Description : The startup task.  The uC/OS-II ticker should only be initialize once multitasking starts.
+    166          *
+    167          * Argument(s) : p_arg       Argument passed to 'App_TaskStart()' by 'OSTaskCreate()'.
+    168          *
+    169          * Return(s)   : none.
+    170          *
+    171          * Caller(s)   : This is a task.
+    172          *
+    173          * Note(s)     : none.
+    174          *********************************************************************************************************
+    175          */
+    176          
+
+   \                                 In section .text, align 2, keep-with-next
+    177          static  void  App_TaskStart (void *p_arg)
+    178          {
+   \                     App_TaskStart:
+   \   00000000   F8B5               PUSH     {R3-R7,LR}
+    179              CPU_INT32U  i;
+    180              CPU_INT32U  j;
+    181              CPU_INT16U  dly;
+    182          
+    183          
+    184              (void)p_arg;
+    185          
+    186              BSP_Init();                                                 /* Initialize BSP functions.                            */
+   \   00000002   ........           BL       BSP_Init
+    187              OS_CPU_SysTickInit();                                       /* Initialize the SysTick.                              */
+   \   00000006   ........           BL       OS_CPU_SysTickInit
+    188          
+    189          #if (OS_TASK_STAT_EN > 0)
+    190              OSStatInit();                                               /* Determine CPU capacity.                              */
+   \   0000000A   ........           BL       OSStatInit
+    191          #endif
+    192          
+    193          #if ((APP_PROBE_COM_EN == DEF_ENABLED) || \
+    194               (APP_OS_PROBE_EN  == DEF_ENABLED))
+    195              App_InitProbe();
+   \   0000000E   ........           BL       App_InitProbe
+    196          #endif
+    197          
+    198              App_EventCreate();                                          /* Create application events.                           */
+   \   00000012   ........           BL       App_EventCreate
+    199              App_TaskCreate();                                           /* Create application tasks.                            */
+   \   00000016   ........           BL       App_TaskCreate
+    200          
+    201          
+    202              BSP_LED_Off(0);
+   \   0000001A   0020               MOVS     R0,#+0
+   \   0000001C   ........           BL       BSP_LED_Off
+    203          
+    204              dly = BSP_ADC_GetStatus(1) * 200 / 1024 + 10;
+   \   00000020   C825               MOVS     R5,#+200
+   \   00000022   0120               MOVS     R0,#+1
+   \   00000024   ........           BL       BSP_ADC_GetStatus
+   \   00000028   6843               MULS     R0,R0,R5
+   \   0000002A   4112               ASRS     R1,R0,#+9
+   \   0000002C   00EB9150           ADD      R0,R0,R1, LSR #+22
+   \   00000030   8012               ASRS     R0,R0,#+10
+   \   00000032   00F10A04           ADD      R4,R0,#+10
+    205          
+    206              while (DEF_TRUE) {                                          /* Task body, always written as an infinite loop.       */
+    207                  for (j = 0; j < 4; j++) {
+   \                     ??App_TaskStart_0:
+   \   00000036   0027               MOVS     R7,#+0
+   \   00000038   1BE0               B.N      ??App_TaskStart_1
+    208                      for (i = 1; i <= 16; i++) {
+    209                          BSP_LED_On(i);
+    210                          OSTimeDlyHMSM(0, 0, 0, dly);
+    211                          dly = BSP_ADC_GetStatus(1) * 200 / 1024 + 10;
+    212                          BSP_LED_Off(i);
+    213                      }
+    214          
+    215                      for (i = 15; i >= 1; i--) {
+    216                          BSP_LED_On(i);
+   \                     ??App_TaskStart_2:
+   \   0000003A   3046               MOV      R0,R6
+   \   0000003C   C0B2               UXTB     R0,R0
+   \   0000003E   ........           BL       BSP_LED_On
+    217                          OSTimeDlyHMSM(0, 0, 0, dly);
+   \   00000042   2346               MOV      R3,R4
+   \   00000044   9BB2               UXTH     R3,R3
+   \   00000046   0022               MOVS     R2,#+0
+   \   00000048   1146               MOV      R1,R2
+   \   0000004A   0846               MOV      R0,R1
+   \   0000004C   ........           BL       OSTimeDlyHMSM
+    218                          dly = BSP_ADC_GetStatus(1) * 200 / 1024 + 10;
+   \   00000050   0120               MOVS     R0,#+1
+   \   00000052   ........           BL       BSP_ADC_GetStatus
+   \   00000056   6843               MULS     R0,R0,R5
+   \   00000058   4112               ASRS     R1,R0,#+9
+   \   0000005A   00EB9150           ADD      R0,R0,R1, LSR #+22
+   \   0000005E   8012               ASRS     R0,R0,#+10
+   \   00000060   00F10A04           ADD      R4,R0,#+10
+    219                          BSP_LED_Off(i);
+   \   00000064   3046               MOV      R0,R6
+   \   00000066   C0B2               UXTB     R0,R0
+   \   00000068   ........           BL       BSP_LED_Off
+    220                      }
+   \   0000006C   761E               SUBS     R6,R6,#+1
+   \                     ??App_TaskStart_3:
+   \   0000006E   E4D1               BNE.N    ??App_TaskStart_2
+   \   00000070   7F1C               ADDS     R7,R7,#+1
+   \                     ??App_TaskStart_1:
+   \   00000072   042F               CMP      R7,#+4
+   \   00000074   1FD2               BCS.N    ??App_TaskStart_4
+   \   00000076   0126               MOVS     R6,#+1
+   \   00000078   19E0               B.N      ??App_TaskStart_5
+   \                     ??App_TaskStart_6:
+   \   0000007A   3046               MOV      R0,R6
+   \   0000007C   C0B2               UXTB     R0,R0
+   \   0000007E   ........           BL       BSP_LED_On
+   \   00000082   2346               MOV      R3,R4
+   \   00000084   9BB2               UXTH     R3,R3
+   \   00000086   0022               MOVS     R2,#+0
+   \   00000088   1146               MOV      R1,R2
+   \   0000008A   0846               MOV      R0,R1
+   \   0000008C   ........           BL       OSTimeDlyHMSM
+   \   00000090   0120               MOVS     R0,#+1
+   \   00000092   ........           BL       BSP_ADC_GetStatus
+   \   00000096   6843               MULS     R0,R0,R5
+   \   00000098   4112               ASRS     R1,R0,#+9
+   \   0000009A   00EB9150           ADD      R0,R0,R1, LSR #+22
+   \   0000009E   8012               ASRS     R0,R0,#+10
+   \   000000A0   00F10A04           ADD      R4,R0,#+10
+   \   000000A4   3046               MOV      R0,R6
+   \   000000A6   C0B2               UXTB     R0,R0
+   \   000000A8   ........           BL       BSP_LED_Off
+   \   000000AC   761C               ADDS     R6,R6,#+1
+   \                     ??App_TaskStart_5:
+   \   000000AE   112E               CMP      R6,#+17
+   \   000000B0   E3D3               BCC.N    ??App_TaskStart_6
+   \   000000B2   0F26               MOVS     R6,#+15
+   \   000000B4   DBE7               B.N      ??App_TaskStart_3
+    221                  }
+    222          
+    223                  for (i = 0; i < 4; i++) {
+   \                     ??App_TaskStart_4:
+   \   000000B6   0026               MOVS     R6,#+0
+   \                     ??App_TaskStart_7:
+   \   000000B8   042E               CMP      R6,#+4
+   \   000000BA   BCD2               BCS.N    ??App_TaskStart_0
+    224                      BSP_LED_On(0);
+   \   000000BC   0020               MOVS     R0,#+0
+   \   000000BE   ........           BL       BSP_LED_On
+    225                      OSTimeDlyHMSM(0, 0, 0, dly);
+   \   000000C2   2346               MOV      R3,R4
+   \   000000C4   9BB2               UXTH     R3,R3
+   \   000000C6   0022               MOVS     R2,#+0
+   \   000000C8   1146               MOV      R1,R2
+   \   000000CA   0846               MOV      R0,R1
+   \   000000CC   ........           BL       OSTimeDlyHMSM
+    226                      dly = BSP_ADC_GetStatus(1) * 200 / 1024 + 10;
+   \   000000D0   0120               MOVS     R0,#+1
+   \   000000D2   ........           BL       BSP_ADC_GetStatus
+   \   000000D6   6843               MULS     R0,R0,R5
+   \   000000D8   4112               ASRS     R1,R0,#+9
+   \   000000DA   00EB9150           ADD      R0,R0,R1, LSR #+22
+   \   000000DE   8012               ASRS     R0,R0,#+10
+   \   000000E0   00F10A04           ADD      R4,R0,#+10
+    227                      BSP_LED_Off(0);
+   \   000000E4   0020               MOVS     R0,#+0
+   \   000000E6   ........           BL       BSP_LED_Off
+    228                      OSTimeDlyHMSM(0, 0, 0, dly);
+   \   000000EA   2346               MOV      R3,R4
+   \   000000EC   9BB2               UXTH     R3,R3
+   \   000000EE   0022               MOVS     R2,#+0
+   \   000000F0   1146               MOV      R1,R2
+   \   000000F2   0846               MOV      R0,R1
+   \   000000F4   ........           BL       OSTimeDlyHMSM
+    229                      dly = BSP_ADC_GetStatus(1) * 200 / 1024 + 10;
+   \   000000F8   0120               MOVS     R0,#+1
+   \   000000FA   ........           BL       BSP_ADC_GetStatus
+   \   000000FE   6843               MULS     R0,R0,R5
+   \   00000100   4112               ASRS     R1,R0,#+9
+   \   00000102   00EB9150           ADD      R0,R0,R1, LSR #+22
+   \   00000106   8012               ASRS     R0,R0,#+10
+   \   00000108   00F10A04           ADD      R4,R0,#+10
+    230                  }
+   \   0000010C   761C               ADDS     R6,R6,#+1
+   \   0000010E   D3E7               B.N      ??App_TaskStart_7
+    231          
+    232              }
+    233          }
+    234          
+    235          /*
+    236          *********************************************************************************************************
+    237          *                                             App_EventCreate()
+    238          *
+    239          * Description : Create the application events.
+    240          *
+    241          * Argument(s) : none.
+    242          *
+    243          * Return(s)   : none.
+    244          *
+    245          * Caller(s)   : App_TaskStart().
+    246          *
+    247          * Note(s)     : none.
+    248          *********************************************************************************************************
+    249          */
+    250          
+
+   \                                 In section .text, align 4, keep-with-next
+    251          static  void  App_EventCreate (void)
+    252          {
+   \                     App_EventCreate:
+   \   00000000   10B5               PUSH     {R4,LR}
+   \   00000002   82B0               SUB      SP,SP,#+8
+    253          #if (APP_LCD_EN == DEF_ENABLED)
+    254          #if (OS_EVENT_NAME_SIZE > 12)
+    255              CPU_INT08U  os_err;
+    256          #endif
+    257          
+    258          
+    259              App_UserIFMbox = OSMboxCreate((void *)0);                   /* Create MBOX for communication between Kbd and UserIF.*/
+   \   00000004   ....               LDR.N    R4,??DataTable2  ;; App_UserIFMbox
+   \   00000006   0020               MOVS     R0,#+0
+   \   00000008   ........           BL       OSMboxCreate
+   \   0000000C   2060               STR      R0,[R4, #+0]
+    260          #if (OS_EVENT_NAME_SIZE > 12)
+    261              OSEventNameSet(App_UserIFMbox, "User IF Mbox", &os_err);
+   \   0000000E   00AA               ADD      R2,SP,#+0
+   \   00000010   0149               LDR.N    R1,??App_EventCreate_0  ;; `?<Constant "User IF Mbox">`
+   \   00000012   ........           BL       OSEventNameSet
+    262          #endif
+    263          #endif
+    264          }
+   \   00000016   13BD               POP      {R0,R1,R4,PC}    ;; return
+   \                     ??App_EventCreate_0:
+   \   00000018   ........           DC32     `?<Constant "User IF Mbox">`
+    265          
+    266          /*
+    267          *********************************************************************************************************
+    268          *                                            App_TaskCreate()
+    269          *
+    270          * Description : Create the application tasks.
+    271          *
+    272          * Argument(s) : none.
+    273          *
+    274          * Return(s)   : none.
+    275          *
+    276          * Caller(s)   : App_TaskStart().
+    277          *
+    278          * Note(s)     : none.
+    279          *********************************************************************************************************
+    280          */
+    281          
+
+   \                                 In section .text, align 4, keep-with-next
+    282          static  void  App_TaskCreate (void)
+    283          {
+   \                     App_TaskCreate:
+   \   00000000   38B5               PUSH     {R3-R5,LR}
+    284              CPU_INT08U  os_err;
+    285          
+    286          
+    287          #if (APP_LCD_EN == DEF_ENABLED)
+    288              os_err = OSTaskCreateExt((void (*)(void *)) App_TaskUserIF,
+    289                                       (void          * ) 0,
+    290                                       (OS_STK        * )&App_TaskUserIFStk[APP_TASK_USER_IF_STK_SIZE - 1],
+    291                                       (INT8U           ) APP_TASK_USER_IF_PRIO,
+    292                                       (INT16U          ) APP_TASK_USER_IF_PRIO,
+    293                                       (OS_STK        * )&App_TaskUserIFStk[0],
+    294                                       (INT32U          ) APP_TASK_USER_IF_STK_SIZE,
+    295                                       (void          * ) 0,
+    296                                       (INT16U          )(OS_TASK_OPT_STK_CLR | OS_TASK_OPT_STK_CHK));
+   \   00000002   1A4C               LDR.N    R4,??App_TaskCreate_0  ;; App_TaskUserIFStk
+   \   00000004   0320               MOVS     R0,#+3
+   \   00000006   01B5               PUSH     {R0,LR}
+   \   00000008   0021               MOVS     R1,#+0
+   \   0000000A   4FF48070           MOV      R0,#+256
+   \   0000000E   03B4               PUSH     {R0,R1}
+   \   00000010   2146               MOV      R1,R4
+   \   00000012   0C20               MOVS     R0,#+12
+   \   00000014   03B4               PUSH     {R0,R1}
+   \   00000016   0346               MOV      R3,R0
+   \   00000018   04F57F72           ADD      R2,R4,#+1020
+   \   0000001C   0021               MOVS     R1,#+0
+   \   0000001E   1448               LDR.N    R0,??App_TaskCreate_0+0x4  ;; App_TaskUserIF
+   \   00000020   ........           BL       OSTaskCreateExt
+   \   00000024   06B0               ADD      SP,SP,#+24
+   \   00000026   8DF80000           STRB     R0,[SP, #+0]
+    297          
+    298          #if (OS_TASK_NAME_SIZE >= 9)
+    299              OSTaskNameSet(APP_TASK_USER_IF_PRIO, "User I/F", &os_err);
+   \   0000002A   124D               LDR.N    R5,??App_TaskCreate_0+0x8  ;; `?<Constant "User I/F">`
+   \   0000002C   00AA               ADD      R2,SP,#+0
+   \   0000002E   2946               MOV      R1,R5
+   \   00000030   0C20               MOVS     R0,#+12
+   \   00000032   ........           BL       OSTaskNameSet
+    300          #endif
+    301          #endif
+    302          
+    303              os_err = OSTaskCreateExt((void (*)(void *)) App_TaskKbd,
+    304                                       (void          * ) 0,
+    305                                       (OS_STK        * )&App_TaskKbdStk[APP_TASK_KBD_STK_SIZE - 1],
+    306                                       (INT8U           ) APP_TASK_KBD_PRIO,
+    307                                       (INT16U          ) APP_TASK_KBD_PRIO,
+    308                                       (OS_STK        * )&App_TaskKbdStk[0],
+    309                                       (INT32U          ) APP_TASK_KBD_STK_SIZE,
+    310                                       (void          * ) 0,
+    311                                       (INT16U          )(OS_TASK_OPT_STK_CLR | OS_TASK_OPT_STK_CHK));
+   \   00000036   0320               MOVS     R0,#+3
+   \   00000038   01B5               PUSH     {R0,LR}
+   \   0000003A   0021               MOVS     R1,#+0
+   \   0000003C   8020               MOVS     R0,#+128
+   \   0000003E   03B4               PUSH     {R0,R1}
+   \   00000040   04F58061           ADD      R1,R4,#+1024
+   \   00000044   0420               MOVS     R0,#+4
+   \   00000046   03B4               PUSH     {R0,R1}
+   \   00000048   0346               MOV      R3,R0
+   \   0000004A   04F2FC52           ADDW     R2,R4,#+1532
+   \   0000004E   0021               MOVS     R1,#+0
+   \   00000050   0948               LDR.N    R0,??App_TaskCreate_0+0xC  ;; App_TaskKbd
+   \   00000052   ........           BL       OSTaskCreateExt
+   \   00000056   06B0               ADD      SP,SP,#+24
+   \   00000058   8DF80000           STRB     R0,[SP, #+0]
+    312          
+    313          #if (OS_TASK_NAME_SIZE >= 9)
+    314              OSTaskNameSet(APP_TASK_KBD_PRIO, "Keyboard", &os_err);
+   \   0000005C   00AA               ADD      R2,SP,#+0
+   \   0000005E   05F10C01           ADD      R1,R5,#+12
+   \   00000062   0420               MOVS     R0,#+4
+   \   00000064   ........           BL       OSTaskNameSet
+    315          #endif
+    316          }
+   \   00000068   31BD               POP      {R0,R4,R5,PC}    ;; return
+   \   0000006A   00BF               Nop      
+   \                     ??App_TaskCreate_0:
+   \   0000006C   ........           DC32     App_TaskUserIFStk
+   \   00000070   ........           DC32     App_TaskUserIF
+   \   00000074   ........           DC32     `?<Constant "User I/F">`
+   \   00000078   ........           DC32     App_TaskKbd
+    317          
+    318          /*
+    319          *********************************************************************************************************
+    320          *                                              App_TaskKbd()
+    321          *
+    322          * Description : Monitor the state of the push buttons and passes messages to App_TaskUserIF()
+    323          *
+    324          * Argument(s) : p_arg       Argument passed to 'App_TaskKbd()' by 'OSTaskCreate()'.
+    325          *
+    326          * Return(s)   : none.
+    327          *
+    328          * Caller(s)   : This is a task.
+    329          *
+    330          * Note(s)     : none.
+    331          *********************************************************************************************************
+    332          */
+    333          
+
+   \                                 In section .text, align 2, keep-with-next
+    334          static  void  App_TaskKbd (void *p_arg)
+    335          {
+   \                     App_TaskKbd:
+   \   00000000   F8B5               PUSH     {R3-R7,LR}
+    336          #if (APP_LCD_EN == DEF_ENABLED)
+    337              CPU_BOOLEAN  b1_prev;
+    338              CPU_BOOLEAN  b1;
+    339              CPU_INT08U   key;
+    340          #endif
+    341              CPU_BOOLEAN  b2_prev;
+    342              CPU_BOOLEAN  b2;
+    343          
+    344          
+    345              (void)p_arg;
+    346          
+    347          #if (APP_LCD_EN == DEF_ENABLED)
+    348              b1_prev = DEF_FALSE;
+   \   00000002   0026               MOVS     R6,#+0
+    349              key     = 1;
+   \   00000004   0125               MOVS     R5,#+1
+    350          #endif
+    351          
+    352              b2_prev = DEF_FALSE;
+   \   00000006   3446               MOV      R4,R6
+   \   00000008   18E0               B.N      ??App_TaskKbd_0
+    353          
+    354              while (DEF_TRUE) {
+    355          #if (APP_LCD_EN == DEF_ENABLED)
+    356                  b1 = BSP_PB_GetStatus(1);
+    357                  if ((b1 == DEF_TRUE) && (b1_prev == DEF_FALSE)) {
+    358                      if (key == 4) {
+    359                          key = 1;
+    360                      } else {
+    361                          key++;
+   \                     ??App_TaskKbd_1:
+   \   0000000A   6D1C               ADDS     R5,R5,#+1
+   \   0000000C   EDB2               UXTB     R5,R5
+    362                      }
+    363          
+    364                      OSMboxPost(App_UserIFMbox, (void *)key);
+   \                     ??App_TaskKbd_2:
+   \   0000000E   2946               MOV      R1,R5
+   \   00000010   ....               LDR.N    R0,??DataTable2  ;; App_UserIFMbox
+   \   00000012   0068               LDR      R0,[R0, #+0]
+   \   00000014   ........           BL       OSMboxPost
+    365                  }
+    366                  b1_prev = b1;
+   \                     ??App_TaskKbd_3:
+   \   00000018   3E46               MOV      R6,R7
+    367          #endif
+    368          
+    369                  b2 = BSP_PB_GetStatus(2);
+   \   0000001A   0220               MOVS     R0,#+2
+   \   0000001C   ........           BL       BSP_PB_GetStatus
+   \   00000020   0746               MOV      R7,R0
+    370                  if ((b2 == DEF_TRUE) && (b2_prev == DEF_FALSE)) {
+   \   00000022   0128               CMP      R0,#+1
+   \   00000024   03D1               BNE.N    ??App_TaskKbd_4
+   \   00000026   002C               CMP      R4,#+0
+   \   00000028   01D1               BNE.N    ??App_TaskKbd_4
+    371                      BSP_LCD_LightToggle();
+   \   0000002A   ........           BL       BSP_LCD_LightToggle
+    372                  }
+    373                  b2_prev = b2;
+   \                     ??App_TaskKbd_4:
+   \   0000002E   3C46               MOV      R4,R7
+    374          
+    375                  OSTimeDlyHMSM(0, 0, 0, 20);
+   \   00000030   1423               MOVS     R3,#+20
+   \   00000032   0022               MOVS     R2,#+0
+   \   00000034   1146               MOV      R1,R2
+   \   00000036   0846               MOV      R0,R1
+   \   00000038   ........           BL       OSTimeDlyHMSM
+   \                     ??App_TaskKbd_0:
+   \   0000003C   0120               MOVS     R0,#+1
+   \   0000003E   ........           BL       BSP_PB_GetStatus
+   \   00000042   0746               MOV      R7,R0
+   \   00000044   0128               CMP      R0,#+1
+   \   00000046   E7D1               BNE.N    ??App_TaskKbd_3
+   \   00000048   002E               CMP      R6,#+0
+   \   0000004A   E5D1               BNE.N    ??App_TaskKbd_3
+   \   0000004C   2846               MOV      R0,R5
+   \   0000004E   0428               CMP      R0,#+4
+   \   00000050   DBD1               BNE.N    ??App_TaskKbd_1
+   \   00000052   0125               MOVS     R5,#+1
+   \   00000054   DBE7               B.N      ??App_TaskKbd_2
+    376              }
+    377          }
+    378          
+    379          /*
+    380          *********************************************************************************************************
+    381          *                                            App_TaskUserIF()
+    382          *
+    383          * Description : Update LCD.
+    384          *
+    385          * Argument(s) : p_arg       Argument passed to 'App_TaskUserIF()' by 'OSTaskCreate()'.
+    386          *
+    387          * Return(s)   : none.
+    388          *
+    389          * Caller(s)   : This is a task.
+    390          *
+    391          * Note(s)     : none.
+    392          *********************************************************************************************************
+    393          */
+    394          
+    395          #if (APP_LCD_EN == DEF_ENABLED)
+
+   \                                 In section .text, align 2, keep-with-next
+    396          static  void  App_TaskUserIF (void *p_arg)
+    397          {
+   \                     App_TaskUserIF:
+   \   00000000   38B5               PUSH     {R3-R5,LR}
+    398              CPU_INT08U  *msg;
+    399              CPU_INT08U   err;
+    400              CPU_INT32U   nstate;
+    401              CPU_INT32U   pstate;
+    402          
+    403          
+    404              (void)p_arg;
+    405          
+    406              DispInit(2, 16);
+   \   00000002   1021               MOVS     R1,#+16
+   \   00000004   0220               MOVS     R0,#+2
+   \   00000006   ........           BL       DispInit
+    407              DispClrScr();
+   \   0000000A   ........           BL       DispClrScr
+    408              BSP_LCD_LightOn();
+   \   0000000E   ........           BL       BSP_LCD_LightOn
+    409          
+    410              App_DispScr_SignOn();
+   \   00000012   ........           BL       App_DispScr_SignOn
+    411              OSTimeDlyHMSM(0, 0, 1, 0);
+   \   00000016   0023               MOVS     R3,#+0
+   \   00000018   0122               MOVS     R2,#+1
+   \   0000001A   1946               MOV      R1,R3
+   \   0000001C   0846               MOV      R0,R1
+   \   0000001E   ........           BL       OSTimeDlyHMSM
+    412              nstate = 1;
+   \   00000022   0124               MOVS     R4,#+1
+    413              pstate = 1;
+   \   00000024   2546               MOV      R5,R4
+   \   00000026   01E0               B.N      ??App_TaskUserIF_0
+    414          
+    415          
+    416              while (DEF_TRUE) {
+    417                  msg = (CPU_INT08U *)(OSMboxPend(App_UserIFMbox, OS_TICKS_PER_SEC / 3, &err));
+    418                  if (err == OS_NO_ERR) {
+    419                      nstate = (CPU_INT32U)msg;
+    420                  }
+    421          
+    422                  if (nstate != pstate) {
+    423                      DispClrScr();
+    424                      pstate  = nstate;
+    425                  }
+    426          
+    427                  switch (nstate) {
+    428                      case 2:
+    429                           App_DispScr_VersionTickRate();
+   \                     ??App_TaskUserIF_1:
+   \   00000028   ........           BL       App_DispScr_VersionTickRate
+   \                     ??App_TaskUserIF_0:
+   \   0000002C   00AA               ADD      R2,SP,#+0
+   \   0000002E   40F24D11           MOVW     R1,#+333
+   \   00000032   ....               LDR.N    R0,??DataTable2  ;; App_UserIFMbox
+   \   00000034   0068               LDR      R0,[R0, #+0]
+   \   00000036   ........           BL       OSMboxPend
+   \   0000003A   9DF80010           LDRB     R1,[SP, #+0]
+   \   0000003E   0029               CMP      R1,#+0
+   \   00000040   00D1               BNE.N    ??App_TaskUserIF_2
+   \   00000042   0446               MOV      R4,R0
+   \                     ??App_TaskUserIF_2:
+   \   00000044   AC42               CMP      R4,R5
+   \   00000046   02D0               BEQ.N    ??App_TaskUserIF_3
+   \   00000048   ........           BL       DispClrScr
+   \   0000004C   2546               MOV      R5,R4
+   \                     ??App_TaskUserIF_3:
+   \   0000004E   2046               MOV      R0,R4
+   \   00000050   0228               CMP      R0,#+2
+   \   00000052   E9D0               BEQ.N    ??App_TaskUserIF_1
+   \   00000054   0328               CMP      R0,#+3
+   \   00000056   02D0               BEQ.N    ??App_TaskUserIF_4
+   \   00000058   0428               CMP      R0,#+4
+   \   0000005A   03D0               BEQ.N    ??App_TaskUserIF_5
+   \   0000005C   05E0               B.N      ??App_TaskUserIF_6
+    430                           break;
+    431          
+    432                      case 3:
+    433                           App_DispScr_CPU();
+   \                     ??App_TaskUserIF_4:
+   \   0000005E   ........           BL       App_DispScr_CPU
+   \   00000062   E3E7               B.N      ??App_TaskUserIF_0
+    434                           break;
+    435          
+    436                      case 4:
+    437                           App_DispScr_CtxSw();
+   \                     ??App_TaskUserIF_5:
+   \   00000064   ........           BL       App_DispScr_CtxSw
+   \   00000068   E0E7               B.N      ??App_TaskUserIF_0
+    438                           break;
+    439          
+    440          
+    441                      case 1:
+    442                      default:
+    443                          App_DispScr_SignOn();
+   \                     ??App_TaskUserIF_6:
+   \   0000006A   ........           BL       App_DispScr_SignOn
+   \   0000006E   DDE7               B.N      ??App_TaskUserIF_0
+    444                          break;
+    445                  }
+    446              }
+    447          }
+    448          #endif
+    449          
+    450          /*
+    451          *********************************************************************************************************
+    452          *                                             DISPLAY SCREENS
+    453          *
+    454          * Descrition  : Display one of the screens used in the demonstration.
+    455          *
+    456          * Argument(s) : none.
+    457          *
+    458          * Return(s)   : none.
+    459          *
+    460          * Caller(s)   : App_TaskUserIF().
+    461          *
+    462          * Note(s)     : none.
+    463          *********************************************************************************************************
+    464          */
+    465          
+    466          #if (APP_LCD_EN == DEF_ENABLED)
+
+   \                                 In section .text, align 4, keep-with-next
+    467          static  void  App_DispScr_SignOn (void)
+    468          {
+   \                     App_DispScr_SignOn:
+   \   00000000   70B5               PUSH     {R4-R6,LR}
+    469              OS_StrCopy(App_LCDLine1, "Micrium uC/OS-II");
+   \   00000002   ....               LDR.N    R4,??DataTable9  ;; App_LCDLine1
+   \   00000004   0B4D               LDR.N    R5,??App_DispScr_SignOn_0  ;; `?<Constant "Micrium uC/OS-II">`
+   \   00000006   2946               MOV      R1,R5
+   \   00000008   2046               MOV      R0,R4
+   \   0000000A   ........           BL       OS_StrCopy
+    470              OS_StrCopy(App_LCDLine2, "STMicro    STM32");
+   \   0000000E   ....               LDR.N    R6,??DataTable11  ;; App_LCDLine2
+   \   00000010   05F11401           ADD      R1,R5,#+20
+   \   00000014   3046               MOV      R0,R6
+   \   00000016   ........           BL       OS_StrCopy
+    471          
+    472              DispStr(0, 0, App_LCDLine1);
+   \   0000001A   2246               MOV      R2,R4
+   \   0000001C   0021               MOVS     R1,#+0
+   \   0000001E   0846               MOV      R0,R1
+   \   00000020   ........           BL       DispStr
+    473              DispStr(1, 0, App_LCDLine2);
+   \   00000024   3246               MOV      R2,R6
+   \   00000026   0021               MOVS     R1,#+0
+   \   00000028   0120               MOVS     R0,#+1
+   \   0000002A   BDE87040           POP      {R4-R6,LR}
+   \   0000002E   ........           B.W      DispStr
+   \   00000032   00BF               Nop      
+   \                     ??App_DispScr_SignOn_0:
+   \   00000034   ........           DC32     `?<Constant "Micrium uC/OS-II">`
+    474          }
+    475          
+
+   \                                 In section .text, align 4, keep-with-next
+    476          static  void  App_DispScr_VersionTickRate (void)
+    477          {
+   \                     App_DispScr_VersionTickRate:
+   \   00000000   70B5               PUSH     {R4-R6,LR}
+    478              CPU_INT32U  value;
+    479          
+    480          
+    481              OS_StrCopy(App_LCDLine1, "uC/OS-II:  Vx.yy");
+   \   00000002   ....               LDR.N    R5,??DataTable9  ;; App_LCDLine1
+   \   00000004   194C               LDR.N    R4,??App_DispScr_VersionTickRate_0  ;; `?<Constant "uC/OS-II:  Vx.yy">`
+   \   00000006   2146               MOV      R1,R4
+   \   00000008   2846               MOV      R0,R5
+   \   0000000A   ........           BL       OS_StrCopy
+    482              value            = (CPU_INT32U)OSVersion();
+   \   0000000E   ........           BL       OSVersion
+    483              App_LCDLine1[12] =  value / 100       + '0';
+   \   00000012   6421               MOVS     R1,#+100
+   \   00000014   B0FBF1F2           UDIV     R2,R0,R1
+   \   00000018   02F13003           ADD      R3,R2,#+48
+   \   0000001C   2B73               STRB     R3,[R5, #+12]
+    484              App_LCDLine1[14] = (value % 100) / 10 + '0';
+   \   0000001E   0A23               MOVS     R3,#+10
+   \   00000020   02FB1101           MLS      R1,R2,R1,R0
+   \   00000024   B1FBF3F1           UDIV     R1,R1,R3
+   \   00000028   3031               ADDS     R1,R1,#+48
+   \   0000002A   A973               STRB     R1,[R5, #+14]
+    485              App_LCDLine1[15] = (value %  10)      + '0';
+   \   0000002C   B0FBF3F1           UDIV     R1,R0,R3
+   \   00000030   01FB1300           MLS      R0,R1,R3,R0
+   \   00000034   3030               ADDS     R0,R0,#+48
+   \   00000036   E873               STRB     R0,[R5, #+15]
+    486          
+    487              OS_StrCopy(App_LCDLine2, "TickRate:   xxxx");
+   \   00000038   ....               LDR.N    R6,??DataTable11  ;; App_LCDLine2
+   \   0000003A   04F11401           ADD      R1,R4,#+20
+   \   0000003E   3046               MOV      R0,R6
+   \   00000040   ........           BL       OS_StrCopy
+    488              value = (CPU_INT32U)OS_TICKS_PER_SEC;
+    489              App_FormatDec(&App_LCDLine2[12], value, 4);
+   \   00000044   0422               MOVS     R2,#+4
+   \   00000046   4FF47A71           MOV      R1,#+1000
+   \   0000004A   06F10C00           ADD      R0,R6,#+12
+   \   0000004E   ........           BL       App_FormatDec
+    490          
+    491              DispStr(0, 0, App_LCDLine1);
+   \   00000052   2A46               MOV      R2,R5
+   \   00000054   0021               MOVS     R1,#+0
+   \   00000056   0846               MOV      R0,R1
+   \   00000058   ........           BL       DispStr
+    492              DispStr(1, 0, App_LCDLine2);
+   \   0000005C   3246               MOV      R2,R6
+   \   0000005E   0021               MOVS     R1,#+0
+   \   00000060   0120               MOVS     R0,#+1
+   \   00000062   BDE87040           POP      {R4-R6,LR}
+   \   00000066   ........           B.W      DispStr
+   \   0000006A   00BF               Nop      
+   \                     ??App_DispScr_VersionTickRate_0:
+   \   0000006C   ........           DC32     `?<Constant "uC/OS-II:  Vx.yy">`
+    493          }
+    494          
+
+   \                                 In section .text, align 4, keep-with-next
+    495          static  void  App_DispScr_CPU (void)
+    496          {
+   \                     App_DispScr_CPU:
+   \   00000000   F8B5               PUSH     {R3-R7,LR}
+    497              CPU_INT32U  value;
+    498          
+    499          
+    500              OS_StrCopy(App_LCDLine1, "CPU Usage:xx %  ");
+   \   00000002   ....               LDR.N    R4,??DataTable9  ;; App_LCDLine1
+   \   00000004   184D               LDR.N    R5,??App_DispScr_CPU_0  ;; `?<Constant "CPU Usage:xx %  ">`
+   \   00000006   2946               MOV      R1,R5
+   \   00000008   2046               MOV      R0,R4
+   \   0000000A   ........           BL       OS_StrCopy
+    501              value            = (CPU_INT32U)OSCPUUsage;
+   \   0000000E   1748               LDR.N    R0,??App_DispScr_CPU_0+0x4  ;; OSCPUUsage
+   \   00000010   0078               LDRB     R0,[R0, #+0]
+    502              App_LCDLine1[10] = (value / 10) + '0';
+   \   00000012   0A26               MOVS     R6,#+10
+   \   00000014   B0FBF6F1           UDIV     R1,R0,R6
+   \   00000018   01F13002           ADD      R2,R1,#+48
+   \   0000001C   A272               STRB     R2,[R4, #+10]
+    503              App_LCDLine1[11] = (value % 10) + '0';
+   \   0000001E   01FB1600           MLS      R0,R1,R6,R0
+   \   00000022   3030               ADDS     R0,R0,#+48
+   \   00000024   E072               STRB     R0,[R4, #+11]
+    504          
+    505              OS_StrCopy(App_LCDLine2, "CPU Speed:xx MHz");
+   \   00000026   ....               LDR.N    R7,??DataTable11  ;; App_LCDLine2
+   \   00000028   05F11401           ADD      R1,R5,#+20
+   \   0000002C   3846               MOV      R0,R7
+   \   0000002E   ........           BL       OS_StrCopy
+    506              value            = (CPU_INT32U)BSP_CPU_ClkFreq() / 1000000L;
+   \   00000032   ........           BL       BSP_CPU_ClkFreq
+   \   00000036   0E49               LDR.N    R1,??App_DispScr_CPU_0+0x8  ;; 0xf4240
+   \   00000038   B0FBF1F0           UDIV     R0,R0,R1
+    507              App_LCDLine2[10] = (value / 10) + '0';
+   \   0000003C   B0FBF6F1           UDIV     R1,R0,R6
+   \   00000040   01F13002           ADD      R2,R1,#+48
+   \   00000044   BA72               STRB     R2,[R7, #+10]
+    508              App_LCDLine2[11] = (value % 10) + '0';
+   \   00000046   01FB1600           MLS      R0,R1,R6,R0
+   \   0000004A   3030               ADDS     R0,R0,#+48
+   \   0000004C   F872               STRB     R0,[R7, #+11]
+    509          
+    510              DispStr(0, 0, App_LCDLine1);
+   \   0000004E   2246               MOV      R2,R4
+   \   00000050   0021               MOVS     R1,#+0
+   \   00000052   0846               MOV      R0,R1
+   \   00000054   ........           BL       DispStr
+    511              DispStr(1, 0, App_LCDLine2);
+   \   00000058   3A46               MOV      R2,R7
+   \   0000005A   0021               MOVS     R1,#+0
+   \   0000005C   0120               MOVS     R0,#+1
+   \   0000005E   BDE8F840           POP      {R3-R7,LR}
+   \   00000062   ........           B.W      DispStr
+   \   00000066   00BF               Nop      
+   \                     ??App_DispScr_CPU_0:
+   \   00000068   ........           DC32     `?<Constant "CPU Usage:xx %  ">`
+   \   0000006C   ........           DC32     OSCPUUsage
+   \   00000070   40420F00           DC32     0xf4240
+    512          }
+    513          
+
+   \                                 In section .text, align 4, keep-with-next
+    514          static  void  App_DispScr_CtxSw (void)
+    515          {
+   \                     App_DispScr_CtxSw:
+   \   00000000   70B5               PUSH     {R4-R6,LR}
+    516              CPU_INT32U  value;
+    517          
+    518          
+    519              OS_StrCopy(App_LCDLine1, "#Ticks: xxxxxxxx");
+   \   00000002   ....               LDR.N    R4,??DataTable9  ;; App_LCDLine1
+   \   00000004   124D               LDR.N    R5,??App_DispScr_CtxSw_0  ;; `?<Constant "#Ticks: xxxxxxxx">`
+   \   00000006   2946               MOV      R1,R5
+   \   00000008   2046               MOV      R0,R4
+   \   0000000A   ........           BL       OS_StrCopy
+    520              value = (CPU_INT32U)OSTime;
+   \   0000000E   ....               LDR.N    R0,??DataTable14  ;; OSTime
+   \   00000010   0168               LDR      R1,[R0, #+0]
+    521              App_FormatDec(App_LCDLine1 + 8, value, 8);
+   \   00000012   0822               MOVS     R2,#+8
+   \   00000014   04F10800           ADD      R0,R4,#+8
+   \   00000018   ........           BL       App_FormatDec
+    522          
+    523              OS_StrCopy(App_LCDLine2, "#CtxSw: xxxxxxxx");
+   \   0000001C   ....               LDR.N    R6,??DataTable11  ;; App_LCDLine2
+   \   0000001E   05F11401           ADD      R1,R5,#+20
+   \   00000022   3046               MOV      R0,R6
+   \   00000024   ........           BL       OS_StrCopy
+    524              value = (CPU_INT32U)OSCtxSwCtr;
+    525              App_FormatDec(App_LCDLine2 + 8, value, 8);
+   \   00000028   0822               MOVS     R2,#+8
+   \   0000002A   0A48               LDR.N    R0,??App_DispScr_CtxSw_0+0x4  ;; OSCtxSwCtr
+   \   0000002C   0168               LDR      R1,[R0, #+0]
+   \   0000002E   06F10800           ADD      R0,R6,#+8
+   \   00000032   ........           BL       App_FormatDec
+    526          
+    527              DispStr(0, 0, App_LCDLine1);
+   \   00000036   2246               MOV      R2,R4
+   \   00000038   0021               MOVS     R1,#+0
+   \   0000003A   0846               MOV      R0,R1
+   \   0000003C   ........           BL       DispStr
+    528              DispStr(1, 0, App_LCDLine2);
+   \   00000040   3246               MOV      R2,R6
+   \   00000042   0021               MOVS     R1,#+0
+   \   00000044   0120               MOVS     R0,#+1
+   \   00000046   BDE87040           POP      {R4-R6,LR}
+   \   0000004A   ........           B.W      DispStr
+   \   0000004E   00BF               Nop      
+   \                     ??App_DispScr_CtxSw_0:
+   \   00000050   ........           DC32     `?<Constant "#Ticks: xxxxxxxx">`
+   \   00000054   ........           DC32     OSCtxSwCtr
+    529          }
+    530          #endif
+    531          
+    532          /*
+    533          *********************************************************************************************************
+    534          *                                             App_InitProbe()
+    535          *
+    536          * Description : Initialize uC/Probe target code.
+    537          *
+    538          * Argument(s) : none.
+    539          *
+    540          * Return(s)   : none.
+    541          *
+    542          * Caller(s)   : App_TaskStart().
+    543          *
+    544          * Note(s)     : none.
+    545          *********************************************************************************************************
+    546          */
+    547          
+    548          #if ((APP_PROBE_COM_EN == DEF_ENABLED) || \
+    549               (APP_OS_PROBE_EN  == DEF_ENABLED))
+
+   \                                 In section .text, align 4, keep-with-next
+    550          static  void  App_InitProbe (void)
+    551          {
+   \                     App_InitProbe:
+   \   00000000   80B5               PUSH     {R7,LR}
+    552          #if (APP_OS_PROBE_EN        == DEF_ENABLED)
+    553              (void)App_ProbeCounts;
+   \   00000002   ....               LDR.N    R0,??DataTable13  ;; App_ProbeB1
+   \   00000004   C16A               LDR      R1,[R0, #+44]
+    554              (void)App_ProbeADC;
+   \   00000006   8188               LDRH     R1,[R0, #+4]
+    555              (void)App_ProbeB1;
+   \   00000008   0178               LDRB     R1,[R0, #+0]
+    556              (void)App_ProbeB2;
+   \   0000000A   4178               LDRB     R1,[R0, #+1]
+    557              (void)App_ProbeB3;
+   \   0000000C   8178               LDRB     R1,[R0, #+2]
+    558              (void)App_ProbeB_WakeUp;
+   \   0000000E   C078               LDRB     R0,[R0, #+3]
+    559          
+    560          #if ((APP_PROBE_COM_EN      == DEF_ENABLED) && \
+    561               (PROBE_COM_STAT_EN     == DEF_ENABLED))
+    562              (void)App_ProbeComRxPktSpd;
+    563              (void)App_ProbeComTxPktSpd;
+    564              (void)App_ProbeComTxSymSpd;
+    565              (void)App_ProbeComTxSymByteSpd;
+    566          #endif
+    567          
+    568              OSProbe_Init();
+   \   00000010   ........           BL       OSProbe_Init
+    569              OSProbe_SetCallback(App_ProbeCallback);
+   \   00000014   0748               LDR.N    R0,??App_InitProbe_0  ;; App_ProbeCallback
+   \   00000016   ........           BL       OSProbe_SetCallback
+    570              OSProbe_SetDelay(250);
+   \   0000001A   FA20               MOVS     R0,#+250
+   \   0000001C   ........           BL       OSProbe_SetDelay
+    571          #endif
+    572          
+    573          #if (APP_PROBE_COM_EN       == DEF_ENABLED)
+    574              ProbeCom_Init();                                            /* Initialize the uC/Probe communications module.       */
+   \   00000020   ........           BL       ProbeCom_Init
+    575          #if (PROBE_COM_METHOD_RS232 == DEF_ENABLED)
+    576              ProbeRS232_Init(115200);
+   \   00000024   4FF4E130           MOV      R0,#+115200
+   \   00000028   ........           BL       ProbeRS232_Init
+    577              ProbeRS232_RxIntEn();
+   \   0000002C   BDE80140           POP      {R0,LR}
+   \   00000030   ........           B.W      ProbeRS232_RxIntEn
+   \                     ??App_InitProbe_0:
+   \   00000034   ........           DC32     App_ProbeCallback
+    578          #endif
+    579          #endif
+    580          }
+    581          #endif
+    582          
+    583          /*
+    584          *********************************************************************************************************
+    585          *                                           AppProbeCallback()
+    586          *
+    587          * Description : uC/Probe OS plugin callback.
+    588          *
+    589          * Argument(s) : none.
+    590          *
+    591          * Return(s)   : none.
+    592          *
+    593          * Caller(s)   : uC/Probe OS plugin task.
+    594          *
+    595          * Note(s)     : none.
+    596          *********************************************************************************************************
+    597          */
+    598          
+    599          #if (APP_OS_PROBE_EN == DEF_ENABLED)
+
+   \                                 In section .text, align 4, keep-with-next
+    600          static  void  App_ProbeCallback (void)
+    601          {
+   \                     App_ProbeCallback:
+   \   00000000   2DE9F84F           PUSH     {R3-R11,LR}
+    602          #if ((APP_PROBE_COM_EN  == DEF_ENABLED) && \
+    603               (PROBE_COM_STAT_EN == DEF_ENABLED))
+    604              CPU_INT32U  ctr_curr;
+    605              CPU_INT32U  rxpkt_curr;
+    606              CPU_INT32U  txpkt_curr;
+    607              CPU_INT32U  sym_curr;
+    608              CPU_INT32U  symbyte_curr;
+    609          #endif
+    610          
+    611              App_ProbeCounts++;
+   \   00000004   ....               LDR.N    R4,??DataTable13  ;; App_ProbeB1
+   \   00000006   E06A               LDR      R0,[R4, #+44]
+   \   00000008   401C               ADDS     R0,R0,#+1
+   \   0000000A   E062               STR      R0,[R4, #+44]
+    612          
+    613              App_ProbeB1             = BSP_PB_GetStatus(1);
+   \   0000000C   0120               MOVS     R0,#+1
+   \   0000000E   ........           BL       BSP_PB_GetStatus
+   \   00000012   2070               STRB     R0,[R4, #+0]
+    614              App_ProbeB2             = BSP_PB_GetStatus(1);
+   \   00000014   0120               MOVS     R0,#+1
+   \   00000016   ........           BL       BSP_PB_GetStatus
+   \   0000001A   6070               STRB     R0,[R4, #+1]
+    615              App_ProbeB3             = BSP_PB_GetStatus(1);
+   \   0000001C   0120               MOVS     R0,#+1
+   \   0000001E   ........           BL       BSP_PB_GetStatus
+   \   00000022   A070               STRB     R0,[R4, #+2]
+    616              App_ProbeB_WakeUp       = BSP_PB_GetStatus(1);
+   \   00000024   0120               MOVS     R0,#+1
+   \   00000026   ........           BL       BSP_PB_GetStatus
+   \   0000002A   E070               STRB     R0,[R4, #+3]
+    617          
+    618              App_ProbeADC            = BSP_ADC_GetStatus(1) * 100 / 0x1000;
+   \   0000002C   0120               MOVS     R0,#+1
+   \   0000002E   ........           BL       BSP_ADC_GetStatus
+   \   00000032   6421               MOVS     R1,#+100
+   \   00000034   4843               MULS     R0,R0,R1
+   \   00000036   C112               ASRS     R1,R0,#+11
+   \   00000038   00EB1150           ADD      R0,R0,R1, LSR #+20
+   \   0000003C   0013               ASRS     R0,R0,#+12
+   \   0000003E   A080               STRH     R0,[R4, #+4]
+    619          
+    620          #if ((APP_PROBE_COM_EN  == DEF_ENABLED) && \
+    621               (PROBE_COM_STAT_EN == DEF_ENABLED))
+    622              ctr_curr     = OSTime;
+   \   00000040   ....               LDR.N    R0,??DataTable14  ;; OSTime
+   \   00000042   0568               LDR      R5,[R0, #+0]
+    623              rxpkt_curr   = ProbeCom_RxPktCtr;
+   \   00000044   2548               LDR.N    R0,??App_ProbeCallback_0  ;; ProbeCom_RxPktCtr
+   \   00000046   0668               LDR      R6,[R0, #+0]
+    624              txpkt_curr   = ProbeCom_TxPktCtr;
+   \   00000048   2548               LDR.N    R0,??App_ProbeCallback_0+0x4  ;; ProbeCom_TxPktCtr
+   \   0000004A   0768               LDR      R7,[R0, #+0]
+    625              sym_curr     = ProbeCom_TxSymCtr;
+   \   0000004C   2548               LDR.N    R0,??App_ProbeCallback_0+0x8  ;; ProbeCom_TxSymCtr
+   \   0000004E   D0F80080           LDR      R8,[R0, #+0]
+    626              symbyte_curr = ProbeCom_TxSymByteCtr;
+   \   00000052   2548               LDR.N    R0,??App_ProbeCallback_0+0xC  ;; ProbeCom_TxSymByteCtr
+   \   00000054   D0F80090           LDR      R9,[R0, #+0]
+    627          
+    628              if ((ctr_curr - App_ProbeComCtrLast) >= OS_TICKS_PER_SEC) {
+   \   00000058   A06A               LDR      R0,[R4, #+40]
+   \   0000005A   281A               SUBS     R0,R5,R0
+   \   0000005C   B0F57A7F           CMP      R0,#+1000
+   \   00000060   39D3               BCC.N    ??App_ProbeCallback_1
+    629                  App_ProbeComRxPktSpd      = ((CPU_FP32)(rxpkt_curr   - App_ProbeComRxPktLast)     / (ctr_curr - App_ProbeComCtrLast)) * OS_TICKS_PER_SEC;
+   \   00000062   ........           BL       __aeabi_ui2f
+   \   00000066   8246               MOV      R10,R0
+   \   00000068   DFF880B0           LDR.W    R11,??App_ProbeCallback_0+0x10  ;; 0x447a0000
+   \   0000006C   A069               LDR      R0,[R4, #+24]
+   \   0000006E   301A               SUBS     R0,R6,R0
+   \   00000070   ........           BL       __aeabi_ui2f
+   \   00000074   5146               MOV      R1,R10
+   \   00000076   ........           BL       __aeabi_fdiv
+   \   0000007A   5946               MOV      R1,R11
+   \   0000007C   ........           BL       __aeabi_fmul
+   \   00000080   A060               STR      R0,[R4, #+8]
+    630                  App_ProbeComTxPktSpd      = ((CPU_FP32)(txpkt_curr   - App_ProbeComTxPktLast)     / (ctr_curr - App_ProbeComCtrLast)) * OS_TICKS_PER_SEC;
+   \   00000082   E069               LDR      R0,[R4, #+28]
+   \   00000084   381A               SUBS     R0,R7,R0
+   \   00000086   ........           BL       __aeabi_ui2f
+   \   0000008A   5146               MOV      R1,R10
+   \   0000008C   ........           BL       __aeabi_fdiv
+   \   00000090   5946               MOV      R1,R11
+   \   00000092   ........           BL       __aeabi_fmul
+   \   00000096   E060               STR      R0,[R4, #+12]
+    631                  App_ProbeComTxSymSpd      = ((CPU_FP32)(sym_curr     - App_ProbeComTxSymLast)     / (ctr_curr - App_ProbeComCtrLast)) * OS_TICKS_PER_SEC;
+   \   00000098   206A               LDR      R0,[R4, #+32]
+   \   0000009A   A8EB0000           SUB      R0,R8,R0
+   \   0000009E   ........           BL       __aeabi_ui2f
+   \   000000A2   5146               MOV      R1,R10
+   \   000000A4   ........           BL       __aeabi_fdiv
+   \   000000A8   5946               MOV      R1,R11
+   \   000000AA   ........           BL       __aeabi_fmul
+   \   000000AE   2061               STR      R0,[R4, #+16]
+    632                  App_ProbeComTxSymByteSpd  = ((CPU_FP32)(symbyte_curr - App_ProbeComTxSymByteLast) / (ctr_curr - App_ProbeComCtrLast)) * OS_TICKS_PER_SEC;
+   \   000000B0   606A               LDR      R0,[R4, #+36]
+   \   000000B2   A9EB0000           SUB      R0,R9,R0
+   \   000000B6   ........           BL       __aeabi_ui2f
+   \   000000BA   5146               MOV      R1,R10
+   \   000000BC   ........           BL       __aeabi_fdiv
+   \   000000C0   5946               MOV      R1,R11
+   \   000000C2   ........           BL       __aeabi_fmul
+   \   000000C6   6061               STR      R0,[R4, #+20]
+    633          
+    634                  App_ProbeComCtrLast       = ctr_curr;
+   \   000000C8   A562               STR      R5,[R4, #+40]
+    635                  App_ProbeComRxPktLast     = rxpkt_curr;
+   \   000000CA   A661               STR      R6,[R4, #+24]
+    636                  App_ProbeComTxPktLast     = txpkt_curr;
+   \   000000CC   E761               STR      R7,[R4, #+28]
+    637                  App_ProbeComTxSymLast     = sym_curr;
+   \   000000CE   C4F82080           STR      R8,[R4, #+32]
+    638                  App_ProbeComTxSymByteLast = symbyte_curr;
+   \   000000D2   C4F82490           STR      R9,[R4, #+36]
+    639              }
+    640          #endif
+    641          }
+   \                     ??App_ProbeCallback_1:
+   \   000000D6   BDE8F18F           POP      {R0,R4-R11,PC}   ;; return
+   \   000000DA   00BF               Nop      
+   \                     ??App_ProbeCallback_0:
+   \   000000DC   ........           DC32     ProbeCom_RxPktCtr
+   \   000000E0   ........           DC32     ProbeCom_TxPktCtr
+   \   000000E4   ........           DC32     ProbeCom_TxSymCtr
+   \   000000E8   ........           DC32     ProbeCom_TxSymByteCtr
+   \   000000EC   00007A44           DC32     0x447a0000
+    642          #endif
+    643          
+    644          
+    645          /*
+    646          *********************************************************************************************************
+    647          *                                             App_FormatDec()
+    648          *
+    649          * Description : Convert a decimal value to ASCII (without leading zeros).
+    650          *
+    651          * Argument(s) : pstr            Pointer to the destination ASCII string.
+    652          *
+    653          *               value           Value to convert (assumes an unsigned value).
+    654          *
+    655          *               digits          The desired number of digits.
+    656          *
+    657          * Return(s)   : none.
+    658          *
+    659          * Caller(s)   : various.
+    660          *
+    661          * Note(s)     : none.
+    662          *********************************************************************************************************
+    663          */
+    664          
+
+   \                                 In section .text, align 2, keep-with-next
+    665          static  void  App_FormatDec (CPU_INT08U  *pstr,
+    666                                       CPU_INT32U   value,
+    667                                       CPU_INT08U   digits)
+    668          {
+   \                     App_FormatDec:
+   \   00000000   F0B4               PUSH     {R4-R7}
+    669              CPU_INT08U   i;
+    670              CPU_INT32U   mult;
+    671              CPU_BOOLEAN  found;
+    672              CPU_INT32U   nbr;
+    673          
+    674          
+    675              found = DEF_NO;
+   \   00000002   0024               MOVS     R4,#+0
+    676              mult  = 1;
+   \   00000004   0123               MOVS     R3,#+1
+    677              for (i = 0; i < (digits - 1); i++) {
+   \   00000006   2546               MOV      R5,R4
+   \   00000008   571E               SUBS     R7,R2,#+1
+   \   0000000A   03E0               B.N      ??App_FormatDec_0
+    678                  mult *= 10;
+   \                     ??App_FormatDec_1:
+   \   0000000C   0A26               MOVS     R6,#+10
+   \   0000000E   7343               MULS     R3,R3,R6
+    679              }
+   \   00000010   6D1C               ADDS     R5,R5,#+1
+   \   00000012   EDB2               UXTB     R5,R5
+   \                     ??App_FormatDec_0:
+   \   00000014   2E46               MOV      R6,R5
+   \   00000016   BE42               CMP      R6,R7
+   \   00000018   F8DB               BLT.N    ??App_FormatDec_1
+    680              while (mult > 0) {
+   \                     ??App_FormatDec_2:
+   \   0000001A   002B               CMP      R3,#+0
+   \   0000001C   1BD0               BEQ.N    ??App_FormatDec_3
+    681                  nbr = value / mult;
+   \   0000001E   B1FBF3F2           UDIV     R2,R1,R3
+   \   00000022   1546               MOV      R5,R2
+    682                  if (found == DEF_NO) {
+   \   00000024   002C               CMP      R4,#+0
+   \   00000026   0DD1               BNE.N    ??App_FormatDec_4
+    683                      if (nbr != 0) {
+   \   00000028   002D               CMP      R5,#+0
+   \   0000002A   03D0               BEQ.N    ??App_FormatDec_5
+    684                          found = DEF_YES;
+   \   0000002C   0124               MOVS     R4,#+1
+    685                          *pstr = nbr + '0';
+   \   0000002E   3035               ADDS     R5,R5,#+48
+   \   00000030   0570               STRB     R5,[R0, #+0]
+   \   00000032   09E0               B.N      ??App_FormatDec_6
+    686                      } else{
+    687                          if (mult == 1) {
+   \                     ??App_FormatDec_5:
+   \   00000034   012B               CMP      R3,#+1
+   \   00000036   02D1               BNE.N    ??App_FormatDec_7
+    688                              *pstr = '0';
+   \   00000038   3025               MOVS     R5,#+48
+   \   0000003A   0570               STRB     R5,[R0, #+0]
+   \   0000003C   04E0               B.N      ??App_FormatDec_6
+    689                          } else {
+    690                              *pstr = ' ';
+   \                     ??App_FormatDec_7:
+   \   0000003E   2025               MOVS     R5,#+32
+   \   00000040   0570               STRB     R5,[R0, #+0]
+   \   00000042   01E0               B.N      ??App_FormatDec_6
+    691                          }
+    692                      }
+    693                  } else {
+    694                      *pstr = nbr + '0';
+   \                     ??App_FormatDec_4:
+   \   00000044   3035               ADDS     R5,R5,#+48
+   \   00000046   0570               STRB     R5,[R0, #+0]
+    695                  }
+    696                  pstr++;
+   \                     ??App_FormatDec_6:
+   \   00000048   401C               ADDS     R0,R0,#+1
+    697                  value %= mult;
+   \   0000004A   02FB1311           MLS      R1,R2,R3,R1
+    698                  mult  /= 10;
+   \   0000004E   0A22               MOVS     R2,#+10
+   \   00000050   B3FBF2F3           UDIV     R3,R3,R2
+   \   00000054   E1E7               B.N      ??App_FormatDec_2
+    699              }
+    700          }
+   \                     ??App_FormatDec_3:
+   \   00000056   F0BC               POP      {R4-R7}
+   \   00000058   7047               BX       LR               ;; return
+    701          
+    702          
+    703          /*
+    704          *********************************************************************************************************
+    705          *********************************************************************************************************
+    706          *                                          uC/OS-II APP HOOKS
+    707          *********************************************************************************************************
+    708          *********************************************************************************************************
+    709          */
+    710          
+    711          #if (OS_APP_HOOKS_EN > 0)
+    712          /*
+    713          *********************************************************************************************************
+    714          *                                      TASK CREATION HOOK (APPLICATION)
+    715          *
+    716          * Description : This function is called when a task is created.
+    717          *
+    718          * Argument(s) : ptcb   is a pointer to the task control block of the task being created.
+    719          *
+    720          * Note(s)     : (1) Interrupts are disabled during this call.
+    721          *********************************************************************************************************
+    722          */
+    723          
+
+   \                                 In section .text, align 2, keep-with-next
+    724          void  App_TaskCreateHook (OS_TCB *ptcb)
+    725          {
+    726          #if ((APP_OS_PROBE_EN   == DEF_ENABLED) && \
+    727               (OS_PROBE_HOOKS_EN == DEF_ENABLED))
+    728              OSProbe_TaskCreateHook(ptcb);
+   \                     App_TaskCreateHook:
+   \   00000000   ........           B.W      OSProbe_TaskCreateHook
+    729          #endif
+    730          }
+    731          
+    732          /*
+    733          *********************************************************************************************************
+    734          *                                    TASK DELETION HOOK (APPLICATION)
+    735          *
+    736          * Description : This function is called when a task is deleted.
+    737          *
+    738          * Argument(s) : ptcb   is a pointer to the task control block of the task being deleted.
+    739          *
+    740          * Note(s)     : (1) Interrupts are disabled during this call.
+    741          *********************************************************************************************************
+    742          */
+    743          
+
+   \                                 In section .text, align 2, keep-with-next
+    744          void  App_TaskDelHook (OS_TCB *ptcb)
+    745          {
+    746              (void)ptcb;
+    747          }
+   \                     App_TaskDelHook:
+   \   00000000   7047               BX       LR               ;; return
+    748          
+    749          /*
+    750          *********************************************************************************************************
+    751          *                                      IDLE TASK HOOK (APPLICATION)
+    752          *
+    753          * Description : This function is called by OSTaskIdleHook(), which is called by the idle task.  This hook
+    754          *               has been added to allow you to do such things as STOP the CPU to conserve power.
+    755          *
+    756          * Argument(s) : none.
+    757          *
+    758          * Note(s)     : (1) Interrupts are enabled during this call.
+    759          *********************************************************************************************************
+    760          */
+    761          
+    762          #if OS_VERSION >= 251
+
+   \                                 In section .text, align 2, keep-with-next
+    763          void  App_TaskIdleHook (void)
+    764          {
+    765          }
+   \                     App_TaskIdleHook:
+   \   00000000   7047               BX       LR               ;; return
+    766          #endif
+    767          
+    768          /*
+    769          *********************************************************************************************************
+    770          *                                        STATISTIC TASK HOOK (APPLICATION)
+    771          *
+    772          * Description : This function is called by OSTaskStatHook(), which is called every second by uC/OS-II's
+    773          *               statistics task.  This allows your application to add functionality to the statistics task.
+    774          *
+    775          * Argument(s) : none.
+    776          *********************************************************************************************************
+    777          */
+    778          
+
+   \                                 In section .text, align 2, keep-with-next
+    779          void  App_TaskStatHook (void)
+    780          {
+    781          }
+   \                     App_TaskStatHook:
+   \   00000000   7047               BX       LR               ;; return
+    782          
+    783          /*
+    784          *********************************************************************************************************
+    785          *                                        TASK SWITCH HOOK (APPLICATION)
+    786          *
+    787          * Description : This function is called when a task switch is performed.  This allows you to perform other
+    788          *               operations during a context switch.
+    789          *
+    790          * Argument(s) : none.
+    791          *
+    792          * Note(s)     : (1) Interrupts are disabled during this call.
+    793          *
+    794          *               (2) It is assumed that the global pointer 'OSTCBHighRdy' points to the TCB of the task that
+    795          *                   will be 'switched in' (i.e. the highest priority task) and, 'OSTCBCur' points to the
+    796          *                  task being switched out (i.e. the preempted task).
+    797          *********************************************************************************************************
+    798          */
+    799          
+    800          #if OS_TASK_SW_HOOK_EN > 0
+
+   \                                 In section .text, align 2, keep-with-next
+    801          void  App_TaskSwHook (void)
+    802          {
+    803          #if ((APP_OS_PROBE_EN   == DEF_ENABLED) && \
+    804               (OS_PROBE_HOOKS_EN == DEF_ENABLED))
+    805              OSProbe_TaskSwHook();
+   \                     App_TaskSwHook:
+   \   00000000   ........           B.W      OSProbe_TaskSwHook
+    806          #endif
+    807          }
+    808          #endif
+    809          
+    810          /*
+    811          *********************************************************************************************************
+    812          *                                     OS_TCBInit() HOOK (APPLICATION)
+    813          *
+    814          * Description : This function is called by OSTCBInitHook(), which is called by OS_TCBInit() after setting
+    815          *               up most of the TCB.
+    816          *
+    817          * Argument(s) : ptcb    is a pointer to the TCB of the task being created.
+    818          *
+    819          * Note(s)     : (1) Interrupts may or may not be ENABLED during this call.
+    820          *********************************************************************************************************
+    821          */
+    822          
+    823          #if OS_VERSION >= 204
+
+   \                                 In section .text, align 2, keep-with-next
+    824          void  App_TCBInitHook (OS_TCB *ptcb)
+    825          {
+    826              (void)ptcb;
+    827          }
+   \                     App_TCBInitHook:
+   \   00000000   7047               BX       LR               ;; return
+    828          #endif
+    829          
+    830          /*
+    831          *********************************************************************************************************
+    832          *                                        TICK HOOK (APPLICATION)
+    833          *
+    834          * Description : This function is called every tick.
+    835          *
+    836          * Argument(s) : none.
+    837          *
+    838          * Note(s)     : (1) Interrupts may or may not be ENABLED during this call.
+    839          *********************************************************************************************************
+    840          */
+    841          
+    842          #if OS_TIME_TICK_HOOK_EN > 0
+
+   \                                 In section .text, align 2, keep-with-next
+    843          void  App_TimeTickHook (void)
+    844          {
+    845          #if ((APP_OS_PROBE_EN   == DEF_ENABLED) && \
+    846               (OS_PROBE_HOOKS_EN == DEF_ENABLED))
+    847              OSProbe_TickHook();
+   \                     App_TimeTickHook:
+   \   00000000   ........           B.W      OSProbe_TickHook
+    848          #endif
+    849          }
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable2:
+   \   00000000   ........           DC32     App_UserIFMbox
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable9:
+   \   00000000   ........           DC32     App_LCDLine1
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable11:
+   \   00000000   ........           DC32     App_LCDLine2
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable13:
+   \   00000000   ........           DC32     App_ProbeB1
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable14:
+   \   00000000   ........           DC32     OSTime
+
+   \                                 In section .rodata, align 4
+   \                     `?<Constant "Start Task">`:
+   \   00000000   537461727420       DC8 "Start Task"
+   \              5461736B00  
+   \   0000000B   00                 DC8 0
+
+   \                                 In section .rodata, align 4
+   \                     `?<Constant "User IF Mbox">`:
+   \   00000000   557365722049       DC8 "User IF Mbox"
+   \              46204D626F78
+   \              00          
+   \   0000000D   000000             DC8 0, 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     `?<Constant "User I/F">`:
+   \   00000000   557365722049       DC8 "User I/F"
+   \              2F4600      
+   \   00000009   000000             DC8 0, 0, 0
+   \   0000000C   4B6579626F61       DC8 "Keyboard"
+   \              726400      
+   \   00000015   000000             DC8 0, 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     `?<Constant "Micrium uC/OS-II">`:
+   \   00000000   4D6963726975       DC8 "Micrium uC/OS-II"
+   \              6D2075432F4F
+   \              532D494900  
+   \   00000011   000000             DC8 0, 0, 0
+   \   00000014   53544D696372       DC8 "STMicro    STM32"
+   \              6F2020202053
+   \              544D333200  
+   \   00000025   000000             DC8 0, 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     `?<Constant "uC/OS-II:  Vx.yy">`:
+   \   00000000   75432F4F532D       DC8 "uC/OS-II:  Vx.yy"
+   \              49493A202056
+   \              782E797900  
+   \   00000011   000000             DC8 0, 0, 0
+   \   00000014   5469636B5261       DC8 "TickRate:   xxxx"
+   \              74653A202020
+   \              7878787800  
+   \   00000025   000000             DC8 0, 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     `?<Constant "CPU Usage:xx %  ">`:
+   \   00000000   435055205573       DC8 "CPU Usage:xx %  "
+   \              6167653A7878
+   \              2025202000  
+   \   00000011   000000             DC8 0, 0, 0
+   \   00000014   435055205370       DC8 "CPU Speed:xx MHz"
+   \              6565643A7878
+   \              204D487A00  
+   \   00000025   000000             DC8 0, 0, 0
+
+   \                                 In section .rodata, align 4
+   \                     `?<Constant "#Ticks: xxxxxxxx">`:
+   \   00000000   235469636B73       DC8 "#Ticks: xxxxxxxx"
+   \              3A2078787878
+   \              7878787800  
+   \   00000011   000000             DC8 0, 0, 0
+   \   00000014   234374785377       DC8 "#CtxSw: xxxxxxxx"
+   \              3A2078787878
+   \              7878787800  
+   \   00000025   000000             DC8 0, 0, 0
+    850          #endif
+    851          #endif
+
+   Maximum stack usage in bytes:
+
+     Function                    .cstack
+     --------                    -------
+     App_DispScr_CPU                 24
+     App_DispScr_CtxSw               16
+     App_DispScr_SignOn              16
+     App_DispScr_VersionTickRate     16
+     App_EventCreate                 16
+     App_FormatDec                   16
+     App_InitProbe                    8
+     App_ProbeCallback               40
+     App_TCBInitHook                  0
+     App_TaskCreate                  40
+     App_TaskCreateHook               8
+     App_TaskDelHook                  0
+     App_TaskIdleHook                 0
+     App_TaskKbd                     24
+     App_TaskStart                   24
+     App_TaskStatHook                 0
+     App_TaskSwHook                   8
+     App_TaskUserIF                  16
+     App_TimeTickHook                 8
+     main                            32
+
+
+   Section sizes:
+
+     Function/Label                 Bytes
+     --------------                 -----
+     App_TaskStartStk                512
+     App_TaskUserIFStk              1536
+     App_TaskKbdStk
+     App_UserIFMbox                    4
+     App_LCDLine1                     20
+     App_LCDLine2                     20
+     App_ProbeB1                      48
+     App_ProbeB2
+     App_ProbeB3
+     App_ProbeB_WakeUp
+     App_ProbeADC
+     App_ProbeComRxPktSpd
+     App_ProbeComTxPktSpd
+     App_ProbeComTxSymSpd
+     App_ProbeComTxSymByteSpd
+     App_ProbeComRxPktLast
+     App_ProbeComTxPktLast
+     App_ProbeComTxSymLast
+     App_ProbeComTxSymByteLast
+     App_ProbeComCtrLast
+     App_ProbeCounts
+     main                             80
+     App_TaskStart                   272
+     App_EventCreate                  28
+     App_TaskCreate                  124
+     App_TaskKbd                      86
+     App_TaskUserIF                  112
+     App_DispScr_SignOn               56
+     App_DispScr_VersionTickRate     112
+     App_DispScr_CPU                 116
+     App_DispScr_CtxSw                88
+     App_InitProbe                    56
+     App_ProbeCallback               240
+     App_FormatDec                    90
+     App_TaskCreateHook                4
+     App_TaskDelHook                   2
+     App_TaskIdleHook                  2
+     App_TaskStatHook                  2
+     App_TaskSwHook                    4
+     App_TCBInitHook                   2
+     App_TimeTickHook                  4
+     ??DataTable2                      4
+     ??DataTable9                      4
+     ??DataTable11                     4
+     ??DataTable13                     4
+     ??DataTable14                     4
+     ?<Constant "Start Task">         12
+     ?<Constant "User IF Mbox">       16
+     ?<Constant "User I/F">           24
+     ?<Constant "Micrium uC/OS-II">   40
+     ?<Constant "uC/OS-II:  Vx.yy">   40
+     ?<Constant "CPU Usage:xx %  ">   40
+     ?<Constant "#Ticks: xxxxxxxx">   40
+
+ 
+ 2 140 bytes in section .bss
+   212 bytes in section .rodata
+ 1 500 bytes in section .text
+ 
+ 1 500 bytes of CODE  memory
+   212 bytes of CONST memory
+ 2 140 bytes of DATA  memory
+
+Errors: none
+Warnings: none

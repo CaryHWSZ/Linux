@@ -1,0 +1,1051 @@
+###############################################################################
+#                                                                             #
+# IAR ANSI C/C++ Compiler V5.30.2.51295/W32 for ARM     28/Dec/2014  20:58:58 #
+# Copyright 1999-2009 IAR Systems AB.                                         #
+#                                                                             #
+#    Cpu mode     =  thumb                                                    #
+#    Endian       =  little                                                   #
+#    Source file  =  C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    uC-LCD\Source\lcd.c                                      #
+#    Command line =  C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    uC-LCD\Source\lcd.c -lCN C:\Users\Administrator\Desktop\ #
+#                    uCOS-II\Micrium\Software\EvalBoards\ST\STM32-SK\IAR\OS-P #
+#                    robe-LCD\Flash\List\ -o C:\Users\Administrator\Desktop\u #
+#                    COS-II\Micrium\Software\EvalBoards\ST\STM32-SK\IAR\OS-Pr #
+#                    obe-LCD\Flash\Obj\ --no_unroll --no_inline --no_tbaa     #
+#                    --no_scheduling --debug --endian=little --cpu=Cortex-M3  #
+#                    -e --fpu=None --dlib_config "F:\Program Files (x86)\IAR  #
+#                    Systems\Embedded Workbench 5.4\arm\INC\DLib_Config_Norma #
+#                    l.h" -I C:\Users\Administrator\Desktop\uCOS-II\Micrium\S #
+#                    oftware\EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\ -I      #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\BSP\ -I       #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\C #
+#                    PU\ST\STM32\inc\ -I C:\Users\Administrator\Desktop\uCOS- #
+#                    II\Micrium\Software\EvalBoards\ST\STM32-SK\IAR\OS-Probe- #
+#                    LCD\..\..\..\..\..\uC-CPU\ -I                            #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-CPU\ARM-Cortex-M3\IAR\ -I                              #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-LCD\Source\ -I C:\Users\Administrator\Desktop\uCOS-II\ #
+#                    Micrium\Software\EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD #
+#                    \..\..\..\..\..\uC-LIB\ -I C:\Users\Administrator\Deskto #
+#                    p\uCOS-II\Micrium\Software\EvalBoards\ST\STM32-SK\IAR\OS #
+#                    -Probe-LCD\..\..\..\..\..\uCOS-II\Ports\ARM-Cortex-M3\Ge #
+#                    neric\IAR\ -I C:\Users\Administrator\Desktop\uCOS-II\Mic #
+#                    rium\Software\EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\.. #
+#                    \..\..\..\..\uCOS-II\Source\ -I                          #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-Probe\Target\Communication\Generic\RS-232\Source\ -I   #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-Probe\Target\Communication\Generic\RS-232\Ports\ST\STM #
+#                    32\ -I C:\Users\Administrator\Desktop\uCOS-II\Micrium\So #
+#                    ftware\EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\ #
+#                    ..\..\uC-Probe\Target\Communication\Generic\Source\ -I   #
+#                    C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\..\..\..\..\..\u #
+#                    C-Probe\Target\Plugins\uCOS-II\ -I "F:\Program Files     #
+#                    (x86)\IAR Systems\Embedded Workbench 5.4\arm\INC\" -Om   #
+#    List file    =  C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\Flash\List\lcd.l #
+#                    st                                                       #
+#    Object file  =  C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\ #
+#                    EvalBoards\ST\STM32-SK\IAR\OS-Probe-LCD\Flash\Obj\lcd.o  #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\Administrator\Desktop\uCOS-II\Micrium\Software\uC-LCD\Source\lcd.c
+      1          /*
+      2          *********************************************************************************************************
+      3          *                                               uC/LCD
+      4          *                                         LCD Module Driver
+      5          *
+      6          *                              (c) Copyright 2005; Micrium; Weston, FL
+      7          *
+      8          *                   All rights reserved.  Protected by international copyright laws.
+      9          *                   Knowledge of the source code may not be used to write a similar
+     10          *                   product.  This file may only be used in accordance with a license
+     11          *                   and should not be redistributed in any way.
+     12          *********************************************************************************************************
+     13          */
+     14          
+     15          
+     16          /*
+     17          *********************************************************************************************************
+     18          *                                        LCD MODULE SOURCE FILE
+     19          *
+     20          * Filename      : lcd.c
+     21          * Programmer(s) : JJL
+     22          * Version       : V3.00
+     23          *********************************************************************************************************
+     24          *                                              DESCRIPTION
+     25          *
+     26          *
+     27          * This module provides an interface to an alphanumeric display module.
+     28          *
+     29          * The current version of this driver supports any  alphanumeric LCD module based on the:
+     30          *     Hitachi HD44780 DOT MATRIX LCD controller.
+     31          *
+     32          * This driver supports LCD displays having the following configuration:
+     33          *
+     34          *     1 line  x 16 characters     2 lines x 16 characters     4 lines x 16 characters
+     35          *     1 line  x 20 characters     2 lines x 20 characters     4 lines x 20 characters
+     36          *     1 line  x 24 characters     2 lines x 24 characters
+     37          *     1 line  x 40 characters     2 lines x 40 characters
+     38          *********************************************************************************************************
+     39          */
+     40          
+     41          /*$PAGE*/
+     42          /*
+     43          *********************************************************************************************************
+     44          *                                              INCLUDE FILES
+     45          *********************************************************************************************************
+     46          */
+     47          
+     48          #include "includes.h"
+     49          
+     50          /*
+     51          *********************************************************************************************************
+     52          *                                            LOCAL CONSTANTS
+     53          *********************************************************************************************************
+     54          */
+     55          
+     56                                                 /* ---------------------- HD44780 COMMANDS -------------------- */
+     57          #define  DISP_CMD_CLS            0x01  /* Clr display : clears display and returns cursor home         */
+     58          
+     59          #if      DISP_BUS_WIDTH == 4
+     60          #define  DISP_CMD_FNCT           0x28  /* Function Set: Set 4 bit data length, 1/16 duty, 5x8 dots     */
+     61          #else
+     62          #define  DISP_CMD_FNCT           0x38  /* Function Set: Set 8 bit data length, 1/16 duty, 5x8 dots     */
+     63          #endif
+     64          
+     65          #define  DISP_CMD_FNCT_INIT8     0x30  /* Function Set: 8 bit mode, no options                         */
+     66          #define  DISP_CMD_FNCT_INIT4     0x20  /* Function Set: 4 bit mode, no options                         */
+     67          
+     68          #define  DISP_CMD_MODE           0x06  /* Entry mode  : Inc. display data address when writing         */
+     69          #define  DISP_CMD_ON_OFF         0x0C  /* Disp ON/OFF : Display ON, cursor OFF and no BLINK character  */
+     70          
+     71          /*
+     72          *********************************************************************************************************
+     73          *                                            LOCAL VARIABLES
+     74          *********************************************************************************************************
+     75          */
+     76          
+
+   \                                 In section .bss, align 1
+     77          static  CPU_INT08U   DispMaxCols;      /* Maximum number of columns (i.e. characters per line)         */
+   \                     DispMaxCols:
+   \   00000000                      DS8 1
+   \   00000001                      DS8 1
+     78          static  CPU_INT08U   DispMaxRows;      /* Maximum number of rows for the display                       */
+     79          
+     80          
+
+   \                                 In section .data, align 4
+     81          static  CPU_INT08U   DispHorBar1[]  = {0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10, 0x10};
+   \                     DispHorBar1:
+   \   00000000   101010101010       DC8 16, 16, 16, 16, 16, 16, 16, 16
+   \              1010        
+   \   00000008   181818181818       DC8 24, 24, 24, 24, 24, 24, 24, 24
+   \              1818        
+   \   00000010   1C1C1C1C1C1C       DC8 28, 28, 28, 28, 28, 28, 28, 28
+   \              1C1C        
+   \   00000018   1E1E1E1E1E1E       DC8 30, 30, 30, 30, 30, 30, 30, 30
+   \              1E1E        
+   \   00000020   1F1F1F1F1F1F       DC8 31, 31, 31, 31, 31, 31, 31, 31
+   \              1F1F        
+     82          static  CPU_INT08U   DispHorBar2[]  = {0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18, 0x18};
+     83          static  CPU_INT08U   DispHorBar3[]  = {0x1C, 0x1C, 0x1C, 0x1C, 0x1C, 0x1C, 0x1C, 0x1C};
+     84          static  CPU_INT08U   DispHorBar4[]  = {0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E, 0x1E};
+     85          static  CPU_INT08U   DispHorBar5[]  = {0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F};
+     86          
+
+   \                                 In section .data, align 4
+     87          static  CPU_INT08U   DispVertBar1[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F};
+   \                     DispVertBar1:
+   \   00000000   000000000000       DC8 0, 0, 0, 0, 0, 0, 0, 31
+   \              001F        
+   \   00000008   000000000000       DC8 0, 0, 0, 0, 0, 0, 31, 31
+   \              1F1F        
+   \   00000010   00000000001F       DC8 0, 0, 0, 0, 0, 31, 31, 31
+   \              1F1F        
+   \   00000018   000000001F1F       DC8 0, 0, 0, 0, 31, 31, 31, 31
+   \              1F1F        
+   \   00000020   0000001F1F1F       DC8 0, 0, 0, 31, 31, 31, 31, 31
+   \              1F1F        
+   \   00000028   00001F1F1F1F       DC8 0, 0, 31, 31, 31, 31, 31, 31
+   \              1F1F        
+   \   00000030   001F1F1F1F1F       DC8 0, 31, 31, 31, 31, 31, 31, 31
+   \              1F1F        
+   \   00000038   1F1F1F1F1F1F       DC8 31, 31, 31, 31, 31, 31, 31, 31
+   \              1F1F        
+     88          static  CPU_INT08U   DispVertBar2[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x1F, 0x1F};
+     89          static  CPU_INT08U   DispVertBar3[] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x1F, 0x1F, 0x1F};
+     90          static  CPU_INT08U   DispVertBar4[] = {0x00, 0x00, 0x00, 0x00, 0x1F, 0x1F, 0x1F, 0x1F};
+     91          static  CPU_INT08U   DispVertBar5[] = {0x00, 0x00, 0x00, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F};
+     92          static  CPU_INT08U   DispVertBar6[] = {0x00, 0x00, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F};
+     93          static  CPU_INT08U   DispVertBar7[] = {0x00, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F};
+     94          static  CPU_INT08U   DispVertBar8[] = {0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F, 0x1F};
+     95          
+     96          /*
+     97          *********************************************************************************************************
+     98          *                                        LOCAL FUNCTION PROTOTYPES
+     99          *********************************************************************************************************
+    100          */
+    101          
+    102          static  void         DispCursorSet(CPU_INT08U row, CPU_INT08U col);
+    103          
+    104          /*$PAGE*/
+    105          /*
+    106          *********************************************************************************************************
+    107          *                                           DISPLAY A CHARACTER
+    108          *
+    109          * Description : This function is used to display a single character on the display device
+    110          * Arguments   : 'row'   is the row    position of the cursor in the LCD Display
+    111          *                       'row' can be a value from 0 to 'DispMaxRows - 1'
+    112          *               'col'   is the column position of the cursor in the LCD Display
+    113          *                       'col' can be a value from 0 to 'DispMaxCols - 1'
+    114          *               'c'     is the character to write to the display at the current ROW/COLUMN position.
+    115          * Returns     : none
+    116          *********************************************************************************************************
+    117          */
+    118          
+
+   \                                 In section .text, align 2, keep-with-next
+    119          void  DispChar (CPU_INT08U row, CPU_INT08U col, CPU_INT08U c)
+    120          {
+   \                     DispChar:
+   \   00000000   70B5               PUSH     {R4-R6,LR}
+   \   00000002   0646               MOV      R6,R0
+   \   00000004   0C46               MOV      R4,R1
+   \   00000006   1546               MOV      R5,R2
+    121              if (row < DispMaxRows && col < DispMaxCols) {
+   \   00000008   ....               LDR.N    R0,??DataTable8  ;; DispMaxCols
+   \   0000000A   4178               LDRB     R1,[R0, #+1]
+   \   0000000C   8E42               CMP      R6,R1
+   \   0000000E   10D2               BCS.N    ??DispChar_0
+   \   00000010   0078               LDRB     R0,[R0, #+0]
+   \   00000012   8442               CMP      R4,R0
+   \   00000014   0DD2               BCS.N    ??DispChar_0
+    122                  DispLock();
+   \   00000016   ........           BL       DispLock
+    123                  DispCursorSet(row, col);            /* Position cursor at ROW/COL                              */
+   \   0000001A   2146               MOV      R1,R4
+   \   0000001C   3046               MOV      R0,R6
+   \   0000001E   ........           BL       DispCursorSet
+    124                  DispSel(DISP_SEL_DATA_REG);
+   \   00000022   0120               MOVS     R0,#+1
+   \   00000024   ........           BL       DispSel
+    125                  DispDataWr(c);                      /* Send character to display                               */
+   \   00000028   2846               MOV      R0,R5
+   \   0000002A   ........           BL       DispDataWr
+    126                  DispUnlock();
+   \   0000002E   ........           BL       DispUnlock
+    127              }
+    128          }
+   \                     ??DispChar_0:
+   \   00000032   70BD               POP      {R4-R6,PC}       ;; return
+    129          
+    130          /*$PAGE*/
+    131          /*
+    132          *********************************************************************************************************
+    133          *                                             CLEAR LINE
+    134          *
+    135          * Description : This function clears one line on the LCD display and positions the cursor at the
+    136          *               beginning of the line.
+    137          * Arguments   : 'line'  is the line number to clear and can take the value
+    138          *                       0 to 'DispMaxRows - 1'
+    139          * Returns     : none
+    140          *********************************************************************************************************
+    141          */
+    142          
+
+   \                                 In section .text, align 2, keep-with-next
+    143          void  DispClrLine (CPU_INT08U line)
+    144          {
+   \                     DispClrLine:
+   \   00000000   70B5               PUSH     {R4-R6,LR}
+   \   00000002   0446               MOV      R4,R0
+    145              CPU_INT08U i;
+    146          
+    147          
+    148              if (line < DispMaxRows) {
+   \   00000004   ....               LDR.N    R5,??DataTable8  ;; DispMaxCols
+   \   00000006   6878               LDRB     R0,[R5, #+1]
+   \   00000008   8442               CMP      R4,R0
+   \   0000000A   19D2               BCS.N    ??DispClrLine_0
+    149                  DispLock();
+   \   0000000C   ........           BL       DispLock
+    150                  DispCursorSet(line, 0);                  /* Position cursor at begin of the line to clear      */
+   \   00000010   0021               MOVS     R1,#+0
+   \   00000012   2046               MOV      R0,R4
+   \   00000014   ........           BL       DispCursorSet
+    151                  DispSel(DISP_SEL_DATA_REG);              /* Select the LCD Display DATA register               */
+   \   00000018   0120               MOVS     R0,#+1
+   \   0000001A   ........           BL       DispSel
+    152                  for (i = 0; i < DispMaxCols; i++) {      /* Write ' ' into all column positions of that line   */
+   \   0000001E   0026               MOVS     R6,#+0
+   \   00000020   04E0               B.N      ??DispClrLine_1
+    153                      DispDataWr(' ');                     /* Write an ASCII space at current cursor position    */
+   \                     ??DispClrLine_2:
+   \   00000022   2020               MOVS     R0,#+32
+   \   00000024   ........           BL       DispDataWr
+    154                  }
+   \   00000028   761C               ADDS     R6,R6,#+1
+   \   0000002A   F6B2               UXTB     R6,R6
+   \                     ??DispClrLine_1:
+   \   0000002C   3046               MOV      R0,R6
+   \   0000002E   2978               LDRB     R1,[R5, #+0]
+   \   00000030   8842               CMP      R0,R1
+   \   00000032   F6D3               BCC.N    ??DispClrLine_2
+    155                  DispCursorSet(line, 0);                  /* Position cursor at begin of the line to clear      */
+   \   00000034   0021               MOVS     R1,#+0
+   \   00000036   2046               MOV      R0,R4
+   \   00000038   ........           BL       DispCursorSet
+    156                  DispUnlock();
+   \   0000003C   ........           BL       DispUnlock
+    157              }
+    158          }
+   \                     ??DispClrLine_0:
+   \   00000040   70BD               POP      {R4-R6,PC}       ;; return
+    159          
+    160          /*$PAGE*/
+    161          /*
+    162          *********************************************************************************************************
+    163          *                                            CLEAR THE SCREEN
+    164          *
+    165          * Description : This function clears the display
+    166          * Arguments   : none
+    167          * Returns     : none
+    168          *********************************************************************************************************
+    169          */
+    170          
+
+   \                                 In section .text, align 2, keep-with-next
+    171          void  DispClrScr (void)
+    172          {
+   \                     DispClrScr:
+   \   00000000   80B5               PUSH     {R7,LR}
+    173              DispLock();
+   \   00000002   ........           BL       DispLock
+    174              DispSel(DISP_SEL_CMD_REG);         /* Select the LCD display command register                      */
+   \   00000006   0020               MOVS     R0,#+0
+   \   00000008   ........           BL       DispSel
+    175              DispDataWr(DISP_CMD_CLS);          /* Send command to LCD display to clear the display             */
+   \   0000000C   0120               MOVS     R0,#+1
+   \   0000000E   ........           BL       DispDataWr
+    176              DispDly_uS(2000);                  /* Delay at least  2 mS                                         */
+   \   00000012   4FF4FA60           MOV      R0,#+2000
+   \   00000016   ........           BL       DispDly_uS
+    177              DispUnlock();
+   \   0000001A   BDE80140           POP      {R0,LR}
+   \   0000001E   ........           B.W      DispUnlock
+    178          }
+    179          
+    180          /*$PAGE*/
+    181          /*
+    182          *********************************************************************************************************
+    183          *                                     POSITION THE CURSOR (Internal)
+    184          *
+    185          * Description : This function positions the cursor into the LCD buffer
+    186          * Arguments   : 'row'   is the row    position of the cursor in the LCD Display
+    187          *                       'row' can be a value from 0 to 'DispMaxRows - 1'
+    188          *               'col'   is the column position of the cursor in the LCD Display
+    189          *                       'col' can be a value from 0 to 'DispMaxCols - 1'
+    190          * Returns     : none
+    191          *********************************************************************************************************
+    192          */
+    193          
+
+   \                                 In section .text, align 2, keep-with-next
+    194          static  void  DispCursorSet (CPU_INT08U row, CPU_INT08U col)
+    195          {
+   \                     DispCursorSet:
+   \   00000000   38B5               PUSH     {R3-R5,LR}
+   \   00000002   0546               MOV      R5,R0
+   \   00000004   0C46               MOV      R4,R1
+    196              DispSel(DISP_SEL_CMD_REG);                             /* Select LCD display command register      */
+   \   00000006   0020               MOVS     R0,#+0
+   \   00000008   ........           BL       DispSel
+    197              switch (row) {
+   \   0000000C   002D               CMP      R5,#+0
+   \   0000000E   05D0               BEQ.N    ??DispCursorSet_0
+   \   00000010   022D               CMP      R5,#+2
+   \   00000012   28D0               BEQ.N    ??DispCursorSet_1
+   \   00000014   20D3               BCC.N    ??DispCursorSet_2
+   \   00000016   032D               CMP      R5,#+3
+   \   00000018   2ED0               BEQ.N    ??DispCursorSet_3
+   \   0000001A   31BD               POP      {R0,R4,R5,PC}
+    198                  case 0:
+    199                       if (DispMaxRows == 1) {                       /* Handle special case when only one line   */
+   \                     ??DispCursorSet_0:
+   \   0000001C   ....               LDR.N    R0,??DataTable8  ;; DispMaxCols
+   \   0000001E   4178               LDRB     R1,[R0, #+1]
+   \   00000020   0129               CMP      R1,#+1
+   \   00000022   12D1               BNE.N    ??DispCursorSet_4
+   \   00000024   0078               LDRB     R0,[R0, #+0]
+   \   00000026   4008               LSRS     R0,R0,#+1
+   \   00000028   8442               CMP      R4,R0
+   \   0000002A   06D2               BCS.N    ??DispCursorSet_5
+    200                           if (col < (DispMaxCols >> 1)) {
+    201                               DispDataWr(0x80 + col);               /* First  half of the line starts at 0x80   */
+   \   0000002C   A4F18000           SUB      R0,R4,#+128
+   \   00000030   C0B2               UXTB     R0,R0
+   \   00000032   BDE83240           POP      {R1,R4,R5,LR}
+   \   00000036   ........           B.W      DispDataWr
+    202                           } else {                                  /* Second half of the line starts at 0xC0   */
+    203                               DispDataWr(0xC0 + col - (DispMaxCols >> 1));
+   \                     ??DispCursorSet_5:
+   \   0000003A   A4F14001           SUB      R1,R4,#+64
+   \   0000003E   081A               SUBS     R0,R1,R0
+   \   00000040   C0B2               UXTB     R0,R0
+   \   00000042   BDE83240           POP      {R1,R4,R5,LR}
+   \   00000046   ........           B.W      DispDataWr
+    204                           }
+    205                       } else {
+    206                           DispDataWr(0x80 + col);                   /* Select LCD's display line 1              */
+   \                     ??DispCursorSet_4:
+   \   0000004A   A4F18000           SUB      R0,R4,#+128
+   \   0000004E   C0B2               UXTB     R0,R0
+   \   00000050   BDE83240           POP      {R1,R4,R5,LR}
+   \   00000054   ........           B.W      DispDataWr
+    207                       }
+    208                       break;
+    209          
+    210                  case 1:
+    211                       DispDataWr(0xC0 + col);                       /* Select LCD's display line 2              */
+   \                     ??DispCursorSet_2:
+   \   00000058   A4F14000           SUB      R0,R4,#+64
+   \   0000005C   C0B2               UXTB     R0,R0
+   \   0000005E   BDE83240           POP      {R1,R4,R5,LR}
+   \   00000062   ........           B.W      DispDataWr
+    212                       break;
+    213          
+    214                  case 2:
+    215                       DispDataWr(0x80 + DispMaxCols + col);         /* Select LCD's display line 3              */
+   \                     ??DispCursorSet_1:
+   \   00000066   ....               LDR.N    R0,??DataTable8  ;; DispMaxCols
+   \   00000068   0078               LDRB     R0,[R0, #+0]
+   \   0000006A   2018               ADDS     R0,R4,R0
+   \   0000006C   8038               SUBS     R0,R0,#+128
+   \   0000006E   C0B2               UXTB     R0,R0
+   \   00000070   BDE83240           POP      {R1,R4,R5,LR}
+   \   00000074   ........           B.W      DispDataWr
+    216                       break;
+    217          
+    218                  case 3:
+    219                       DispDataWr(0xC0 + DispMaxCols + col);         /* Select LCD's display line 4              */
+   \                     ??DispCursorSet_3:
+   \   00000078   ....               LDR.N    R0,??DataTable8  ;; DispMaxCols
+   \   0000007A   0078               LDRB     R0,[R0, #+0]
+   \   0000007C   2018               ADDS     R0,R4,R0
+   \   0000007E   4038               SUBS     R0,R0,#+64
+   \   00000080   C0B2               UXTB     R0,R0
+   \   00000082   BDE83240           POP      {R1,R4,R5,LR}
+   \   00000086   ........           B.W      DispDataWr
+    220                       break;
+    221              }
+    222          }
+    223          
+    224          /*$PAGE*/
+    225          /*
+    226          *********************************************************************************************************
+    227          *                                            DEFINE CHARACTER
+    228          *
+    229          * Description : This function defines the dot pattern for a character.
+    230          * Arguments   : 'id'    is the identifier for the desired dot pattern.
+    231          *               'pat'   is a pointer to an 8 BYTE array containing the dot pattern.
+    232          * Returns     : None.
+    233          *********************************************************************************************************
+    234          */
+    235          
+
+   \                                 In section .text, align 2, keep-with-next
+    236          void  DispDefChar (CPU_INT08U id, CPU_INT08U *pat)
+    237          {
+   \                     DispDefChar:
+   \   00000000   38B5               PUSH     {R3-R5,LR}
+   \   00000002   0546               MOV      R5,R0
+   \   00000004   0C46               MOV      R4,R1
+    238              CPU_INT08U i;
+    239          
+    240          
+    241              DispLock();
+   \   00000006   ........           BL       DispLock
+    242              DispSel(DISP_SEL_CMD_REG);              /* Select command register                                 */
+   \   0000000A   0020               MOVS     R0,#+0
+   \   0000000C   ........           BL       DispSel
+    243              DispDataWr(0x40 + (id << 3));           /* Set address of CG RAM                                   */
+   \   00000010   E800               LSLS     R0,R5,#+3
+   \   00000012   4030               ADDS     R0,R0,#+64
+   \   00000014   C0B2               UXTB     R0,R0
+   \   00000016   ........           BL       DispDataWr
+    244              DispSel(DISP_SEL_DATA_REG);             /* Select the data register                                */
+   \   0000001A   0120               MOVS     R0,#+1
+   \   0000001C   ........           BL       DispSel
+    245              for (i = 0; i < 8; i++) {
+   \   00000020   0025               MOVS     R5,#+0
+   \   00000022   05E0               B.N      ??DispDefChar_0
+    246                  DispDataWr(*pat++);                 /* Write pattern into CG RAM                               */
+   \                     ??DispDefChar_1:
+   \   00000024   14F8010B           LDRB     R0,[R4], #+1
+   \   00000028   ........           BL       DispDataWr
+    247              }
+   \   0000002C   6D1C               ADDS     R5,R5,#+1
+   \   0000002E   EDB2               UXTB     R5,R5
+   \                     ??DispDefChar_0:
+   \   00000030   2846               MOV      R0,R5
+   \   00000032   0828               CMP      R0,#+8
+   \   00000034   F6D3               BCC.N    ??DispDefChar_1
+    248              DispUnlock();
+   \   00000036   BDE83140           POP      {R0,R4,R5,LR}
+   \   0000003A   ........           B.W      DispUnlock
+    249          }
+    250          
+    251          /*$PAGE*/
+    252          /*
+    253          *********************************************************************************************************
+    254          *                                            DUMMY FUNCTION
+    255          *
+    256          * Description : This function doesn't do anything.  It is used to act like a NOP (i.e. No Operation) to
+    257          *               waste a few CPU cycles and thus, act as a short delay.
+    258          * Arguments   : none
+    259          * Returns     : none
+    260          *********************************************************************************************************
+    261          */
+    262          
+
+   \                                 In section .text, align 2, keep-with-next
+    263          void  DispDummy (void)
+    264          {
+    265          }
+   \                     DispDummy:
+   \   00000000   7047               BX       LR               ;; return
+    266          
+    267          /*$PAGE*/
+    268          /*
+    269          *********************************************************************************************************
+    270          *                                       DISPLAY A HORIZONTAL BAR
+    271          *
+    272          * Description : This function allows you to display horizontal bars (bar graphs) on the LCD module.
+    273          * Arguments   : 'row'   is the row    position of the cursor in the LCD Display
+    274          *                       'row' can be a value from 0 to 'DispMaxRows - 1'
+    275          *               'val'   is the value of the horizontal bar.  This value cannot exceed:
+    276          *                           DispMaxCols * 5
+    277          * Returns     : none
+    278          * Notes       : To use this function, you must first call DispHorBarInit()
+    279          *********************************************************************************************************
+    280          */
+    281          
+
+   \                                 In section .text, align 2, keep-with-next
+    282          void  DispHorBar (CPU_INT08U row, CPU_INT08U col, CPU_INT08U val)
+    283          {
+   \                     DispHorBar:
+   \   00000000   F8B5               PUSH     {R3-R7,LR}
+   \   00000002   0546               MOV      R5,R0
+   \   00000004   0C46               MOV      R4,R1
+    284              CPU_INT08U i;
+    285              CPU_INT08U full;
+    286              CPU_INT08U fract;
+    287          
+    288          
+    289              full  = val / 5;                        /* Find out how many 'full' blocks to turn ON              */
+   \   00000006   0520               MOVS     R0,#+5
+   \   00000008   92FBF0F6           SDIV     R6,R2,R0
+   \   0000000C   F6B2               UXTB     R6,R6
+    290              fract = val % 5;                        /* Compute portion of block                                */
+   \   0000000E   06FB1027           MLS      R7,R6,R0,R2
+   \   00000012   FFB2               UXTB     R7,R7
+    291              if (row < DispMaxRows && (col + full - 1) < DispMaxCols) {
+   \   00000014   ....               LDR.N    R0,??DataTable8  ;; DispMaxCols
+   \   00000016   4178               LDRB     R1,[R0, #+1]
+   \   00000018   8D42               CMP      R5,R1
+   \   0000001A   1CD2               BCS.N    ??DispHorBar_0
+   \   0000001C   3146               MOV      R1,R6
+   \   0000001E   0919               ADDS     R1,R1,R4
+   \   00000020   491E               SUBS     R1,R1,#+1
+   \   00000022   0078               LDRB     R0,[R0, #+0]
+   \   00000024   8142               CMP      R1,R0
+   \   00000026   16DA               BGE.N    ??DispHorBar_0
+    292                  DispLock();
+   \   00000028   ........           BL       DispLock
+    293                  i = 0;                              /* Set counter to limit column to maximum allowable column */
+    294                  DispCursorSet(row, col);            /* Position cursor at beginning of the bar graph           */
+   \   0000002C   2146               MOV      R1,R4
+   \   0000002E   2846               MOV      R0,R5
+   \   00000030   ........           BL       DispCursorSet
+    295                  DispSel(DISP_SEL_DATA_REG);
+   \   00000034   0120               MOVS     R0,#+1
+   \   00000036   ........           BL       DispSel
+   \   0000003A   04E0               B.N      ??DispHorBar_1
+    296                  while (full > 0) {                  /* Write all 'full' blocks                                 */
+    297                      DispDataWr(5);                  /* Send custom character #5 which is full block            */
+   \                     ??DispHorBar_2:
+   \   0000003C   0520               MOVS     R0,#+5
+   \   0000003E   ........           BL       DispDataWr
+    298                      i++;                            /* Increment limit counter                                 */
+    299                      full--;
+   \   00000042   761E               SUBS     R6,R6,#+1
+   \   00000044   F6B2               UXTB     R6,R6
+    300                  }
+   \                     ??DispHorBar_1:
+   \   00000046   3000               MOVS     R0,R6
+   \   00000048   F8D1               BNE.N    ??DispHorBar_2
+    301                  if (fract > 0) {
+   \   0000004A   3800               MOVS     R0,R7
+   \   0000004C   01D0               BEQ.N    ??DispHorBar_3
+    302                      DispDataWr(fract);              /* Send custom character # 'fract' (i.e. portion of block) */
+   \   0000004E   ........           BL       DispDataWr
+    303                  }
+    304                  DispUnlock();
+   \                     ??DispHorBar_3:
+   \   00000052   ........           BL       DispUnlock
+    305              }
+    306          }
+   \                     ??DispHorBar_0:
+   \   00000056   F1BD               POP      {R0,R4-R7,PC}    ;; return
+    307          
+    308          /*$PAGE*/
+    309          /*
+    310          *********************************************************************************************************
+    311          *                                      INITIALIZE HORIZONTAL BAR
+    312          *
+    313          * Description : This function is used to initialize the bar graph capability of this module.  You must
+    314          *               call this function prior to calling DispHorBar().
+    315          * Arguments   : none
+    316          * Returns     : none
+    317          *********************************************************************************************************
+    318          */
+    319          
+
+   \                                 In section .text, align 4, keep-with-next
+    320          void  DispHorBarInit (void)
+    321          {
+   \                     DispHorBarInit:
+   \   00000000   10B5               PUSH     {R4,LR}
+    322              DispDefChar(1, &DispHorBar1[0]);
+   \   00000002   0D4C               LDR.N    R4,??DispHorBarInit_0  ;; DispHorBar1
+   \   00000004   2146               MOV      R1,R4
+   \   00000006   0120               MOVS     R0,#+1
+   \   00000008   ........           BL       DispDefChar
+    323              DispDefChar(2, &DispHorBar2[0]);
+   \   0000000C   04F10801           ADD      R1,R4,#+8
+   \   00000010   0220               MOVS     R0,#+2
+   \   00000012   ........           BL       DispDefChar
+    324              DispDefChar(3, &DispHorBar3[0]);
+   \   00000016   04F11001           ADD      R1,R4,#+16
+   \   0000001A   0320               MOVS     R0,#+3
+   \   0000001C   ........           BL       DispDefChar
+    325              DispDefChar(4, &DispHorBar4[0]);
+   \   00000020   04F11801           ADD      R1,R4,#+24
+   \   00000024   0420               MOVS     R0,#+4
+   \   00000026   ........           BL       DispDefChar
+    326              DispDefChar(5, &DispHorBar5[0]);
+   \   0000002A   04F12001           ADD      R1,R4,#+32
+   \   0000002E   0520               MOVS     R0,#+5
+   \   00000030   BDE81040           POP      {R4,LR}
+   \   00000034   ....               B.N      DispDefChar
+   \   00000036   00BF               Nop      
+   \                     ??DispHorBarInit_0:
+   \   00000038   ........           DC32     DispHorBar1
+    327          }
+    328          
+    329          /*$PAGE*/
+    330          /*
+    331          *********************************************************************************************************
+    332          *                                       DISPLAY A VERTICAL BAR
+    333          *
+    334          * Description : This function allows you to display vertical bars (bar graphs) on the LCD module.
+    335          * Arguments   : 'row'   is the row    position of the cursor in the LCD Display
+    336          *                       'row' can be a value from 0 to 'DispMaxRows - 1'
+    337          *               'val'   is the value of the vertical bar.  This value cannot exceed 8 (i.e. 8 bars per character)
+    338          *
+    339          * Returns     : none
+    340          * Notes       : To use this function, you must first call DispVerBarInit()
+    341          *********************************************************************************************************
+    342          */
+    343          
+
+   \                                 In section .text, align 2, keep-with-next
+    344          void  DispVertBar (CPU_INT08U row, CPU_INT08U col, CPU_INT08U val)
+    345          {
+   \                     DispVertBar:
+   \   00000000   70B5               PUSH     {R4-R6,LR}
+   \   00000002   0646               MOV      R6,R0
+   \   00000004   0C46               MOV      R4,R1
+   \   00000006   1546               MOV      R5,R2
+    346              if (row < DispMaxRows && col < DispMaxCols) {
+   \   00000008   ....               LDR.N    R0,??DataTable8  ;; DispMaxCols
+   \   0000000A   4178               LDRB     R1,[R0, #+1]
+   \   0000000C   8E42               CMP      R6,R1
+   \   0000000E   1ED2               BCS.N    ??DispVertBar_0
+   \   00000010   0078               LDRB     R0,[R0, #+0]
+   \   00000012   8442               CMP      R4,R0
+   \   00000014   1BD2               BCS.N    ??DispVertBar_0
+    347                  DispLock();
+   \   00000016   ........           BL       DispLock
+    348                  DispCursorSet(row, col);            /* Position cursor at beginning of the bar graph           */
+   \   0000001A   2146               MOV      R1,R4
+   \   0000001C   3046               MOV      R0,R6
+   \   0000001E   ........           BL       DispCursorSet
+    349                  DispSel(DISP_SEL_DATA_REG);
+   \   00000022   0120               MOVS     R0,#+1
+   \   00000024   ........           BL       DispSel
+    350                  switch (val) {
+   \   00000028   2800               MOVS     R0,R5
+   \   0000002A   03D0               BEQ.N    ??DispVertBar_1
+   \   0000002C   401E               SUBS     R0,R0,#+1
+   \   0000002E   0728               CMP      R0,#+7
+   \   00000030   04D9               BLS.N    ??DispVertBar_2
+   \   00000032   07E0               B.N      ??DispVertBar_3
+    351                      case 0:
+    352                           DispDataWr(' ');           /* Display NO bars                                         */
+   \                     ??DispVertBar_1:
+   \   00000034   2020               MOVS     R0,#+32
+   \   00000036   ........           BL       DispDataWr
+   \   0000003A   06E0               B.N      ??DispVertBar_4
+    353                           break;
+    354          
+    355                      case 1:
+    356                      case 2:
+    357                      case 3:
+    358                      case 4:
+    359                      case 5:
+    360                      case 6:
+    361                      case 7:
+    362                      case 8:
+    363                           DispDataWr(val - 1);       /* Display between 1 and 8 bars                            */
+   \                     ??DispVertBar_2:
+   \   0000003C   C0B2               UXTB     R0,R0
+   \   0000003E   ........           BL       DispDataWr
+   \   00000042   02E0               B.N      ??DispVertBar_4
+    364                           break;
+    365          
+    366                      default:
+    367                           DispDataWr(7);             /* Always display 8 bars                                   */
+   \                     ??DispVertBar_3:
+   \   00000044   0720               MOVS     R0,#+7
+   \   00000046   ........           BL       DispDataWr
+    368                           break;
+    369                  }
+    370                  DispUnlock();
+   \                     ??DispVertBar_4:
+   \   0000004A   ........           BL       DispUnlock
+    371              }
+    372          }
+   \                     ??DispVertBar_0:
+   \   0000004E   70BD               POP      {R4-R6,PC}       ;; return
+    373          
+    374          /*$PAGE*/
+    375          /*
+    376          *********************************************************************************************************
+    377          *                                      INITIALIZE VERTICAL BAR
+    378          *
+    379          * Description : This function is used to initialize the bar graph capability of this module.  You must
+    380          *               call this function prior to calling DispVerBar().
+    381          * Arguments   : none
+    382          * Returns     : none
+    383          *********************************************************************************************************
+    384          */
+    385          
+
+   \                                 In section .text, align 4, keep-with-next
+    386          void  DispVertBarInit (void)
+    387          {
+   \                     DispVertBarInit:
+   \   00000000   10B5               PUSH     {R4,LR}
+    388              DispDefChar(0, &DispVertBar1[0]);
+   \   00000002   144C               LDR.N    R4,??DispVertBarInit_0  ;; DispVertBar1
+   \   00000004   2146               MOV      R1,R4
+   \   00000006   0020               MOVS     R0,#+0
+   \   00000008   ........           BL       DispDefChar
+    389              DispDefChar(1, &DispVertBar2[0]);
+   \   0000000C   04F10801           ADD      R1,R4,#+8
+   \   00000010   0120               MOVS     R0,#+1
+   \   00000012   ........           BL       DispDefChar
+    390              DispDefChar(2, &DispVertBar3[0]);
+   \   00000016   04F11001           ADD      R1,R4,#+16
+   \   0000001A   0220               MOVS     R0,#+2
+   \   0000001C   ........           BL       DispDefChar
+    391              DispDefChar(3, &DispVertBar4[0]);
+   \   00000020   04F11801           ADD      R1,R4,#+24
+   \   00000024   0320               MOVS     R0,#+3
+   \   00000026   ........           BL       DispDefChar
+    392              DispDefChar(4, &DispVertBar5[0]);
+   \   0000002A   04F12001           ADD      R1,R4,#+32
+   \   0000002E   0420               MOVS     R0,#+4
+   \   00000030   ........           BL       DispDefChar
+    393              DispDefChar(5, &DispVertBar6[0]);
+   \   00000034   04F12801           ADD      R1,R4,#+40
+   \   00000038   0520               MOVS     R0,#+5
+   \   0000003A   ........           BL       DispDefChar
+    394              DispDefChar(6, &DispVertBar7[0]);
+   \   0000003E   04F13001           ADD      R1,R4,#+48
+   \   00000042   0620               MOVS     R0,#+6
+   \   00000044   ........           BL       DispDefChar
+    395              DispDefChar(7, &DispVertBar8[0]);
+   \   00000048   04F13801           ADD      R1,R4,#+56
+   \   0000004C   0720               MOVS     R0,#+7
+   \   0000004E   BDE81040           POP      {R4,LR}
+   \   00000052   ....               B.N      DispDefChar
+   \                     ??DispVertBarInit_0:
+   \   00000054   ........           DC32     DispVertBar1
+    396          }
+    397          
+    398          /*$PAGE*/
+    399          /*
+    400          *********************************************************************************************************
+    401          *                                      DISPLAY DRIVER INITIALIZATION
+    402          *
+    403          * Description : This function initializes the display driver.
+    404          * Arguments   : maxrows      specifies the number of lines on the display (1 to 4)
+    405          *               maxcols      specified the number of characters per line
+    406          * Returns     : None.
+    407          * Notes       : - DispInit() MUST be called only when multitasking has started.  This is because
+    408          *                 DispInit() requires time delay services from the operating system.
+    409          *               - DispInit() MUST only be called once during initialization.
+    410          *********************************************************************************************************
+    411          */
+    412          
+
+   \                                 In section .text, align 2, keep-with-next
+    413          void  DispInit (CPU_INT08U maxrows, CPU_INT08U maxcols)
+    414          {
+   \                     DispInit:
+   \   00000000   38B5               PUSH     {R3-R5,LR}
+   \   00000002   0546               MOV      R5,R0
+   \   00000004   0C46               MOV      R4,R1
+    415              DispInitOS();                      /* Initialize the RTOS services                                 */
+   \   00000006   ........           BL       DispInitOS
+    416          
+    417              DispInitPort();                    /* Initialize I/O ports used in display driver                  */
+   \   0000000A   ........           BL       DispInitPort
+    418          
+    419              DispMaxRows = maxrows;
+   \   0000000E   ....               LDR.N    R0,??DataTable8  ;; DispMaxCols
+   \   00000010   4570               STRB     R5,[R0, #+1]
+    420              DispMaxCols = maxcols;
+   \   00000012   0470               STRB     R4,[R0, #+0]
+    421          
+    422                                                 /* INITIALIZE THE DISPLAY MODULE                                */
+    423              DispSel(DISP_SEL_CMD_REG);         /* Select command register.                                     */
+   \   00000014   0020               MOVS     R0,#+0
+   \   00000016   ........           BL       DispSel
+    424              DispDly_uS(50000);                 /* Delay more than 15 mS after power up                         */
+   \   0000001A   4CF25030           MOVW     R0,#+50000
+   \   0000001E   ........           BL       DispDly_uS
+    425          
+    426          #if DISP_BUS_WIDTH == 4
+    427              DispDataWrOneNibble(DISP_CMD_FNCT_INIT8);/* Function Set: 8 bit, Only writes upper nibble          */
+   \   00000022   3020               MOVS     R0,#+48
+   \   00000024   ........           BL       DispDataWrOneNibble
+    428              DispDly_uS(5000);                  /* Busy flag cannot be checked yet!  5 FNCT writes recommended! */
+   \   00000028   41F28834           MOVW     R4,#+5000
+   \   0000002C   2046               MOV      R0,R4
+   \   0000002E   ........           BL       DispDly_uS
+    429          
+    430              DispDataWrOneNibble(DISP_CMD_FNCT_INIT8);/* Function Set: 8 bit, Only writes upper nibble          */
+   \   00000032   3020               MOVS     R0,#+48
+   \   00000034   ........           BL       DispDataWrOneNibble
+    431              DispDly_uS(5000);                        /* Busy flag cannot be checked yet!                       */
+   \   00000038   2046               MOV      R0,R4
+   \   0000003A   ........           BL       DispDly_uS
+    432          
+    433              DispDataWrOneNibble(DISP_CMD_FNCT_INIT8);/* Function Set: 8 bit, Only writes upper nibble          */
+   \   0000003E   3020               MOVS     R0,#+48
+   \   00000040   ........           BL       DispDataWrOneNibble
+    434              DispDly_uS(5000);                        /* Busy flag cannot be checked yet!                       */
+   \   00000044   2046               MOV      R0,R4
+   \   00000046   ........           BL       DispDly_uS
+    435          
+    436              DispDataWrOneNibble(DISP_CMD_FNCT_INIT4);/* Function Set: 4 bit, Only writes upper nibble          */
+   \   0000004A   2020               MOVS     R0,#+32
+   \   0000004C   ........           BL       DispDataWrOneNibble
+    437              DispDly_uS(5000);                        /* Busy flag cannot be checked yet!                       */
+   \   00000050   2046               MOV      R0,R4
+   \   00000052   ........           BL       DispDly_uS
+    438          #else
+    439             DispDataWr(DISP_CMD_FNCT_INIT8);    /* Two lines, 1/16 duty cycle, 5x8 dots, 8 bit operation        */
+    440             DispDly_uS(2000);                   /* 4 FNCT writes recommended in Hitachi datasheet!              */
+    441          
+    442             DispDataWr(DISP_CMD_FNCT_INIT8);    /* Two lines, 1/16 duty cycle, 5x8 dots, 8 bit operation        */
+    443             DispDly_uS(2000);                   /* Busy flag cannot be checked yet!                             */
+    444          
+    445             DispDataWr(DISP_CMD_FNCT_INIT8);    /* Two lines, 1/16 duty cycle, 5x8 dots, 8 bit operation        */
+    446             DispDly_uS(2000);                   /* Busy flag cannot be checked yet!                             */
+    447          #endif
+    448          
+    449              DispDataWr(DISP_CMD_FNCT);         /* Two lines, 1/16 duty cycle, 5x8 dots, Operation Mode         */
+   \   00000056   2820               MOVS     R0,#+40
+   \   00000058   ........           BL       DispDataWr
+    450              DispDly_uS(2000);                  /* Optional: Busy flag can now be checked yet                   */
+   \   0000005C   4FF4FA60           MOV      R0,#+2000
+   \   00000060   ........           BL       DispDly_uS
+    451          
+    452              DispDataWr(DISP_CMD_ON_OFF);       /* Disp ON/OFF: Display ON, cursor OFF and no BLINK character   */
+   \   00000064   0C20               MOVS     R0,#+12
+   \   00000066   ........           BL       DispDataWr
+    453              DispDly_uS(2000);                  /* Delay at least  2 mS                                         */
+   \   0000006A   4FF4FA60           MOV      R0,#+2000
+   \   0000006E   ........           BL       DispDly_uS
+    454          
+    455              DispDataWr(DISP_CMD_CLS);          /* Send command to LCD display to clear the display             */
+   \   00000072   0120               MOVS     R0,#+1
+   \   00000074   ........           BL       DispDataWr
+    456              DispDly_uS(2000);                  /* Delay at least  2 mS                                         */
+   \   00000078   4FF4FA60           MOV      R0,#+2000
+   \   0000007C   ........           BL       DispDly_uS
+    457          
+    458              DispDataWr(DISP_CMD_MODE);         /* Entry mode: Inc. display data address when writing           */
+   \   00000080   0620               MOVS     R0,#+6
+   \   00000082   ........           BL       DispDataWr
+    459              DispDly_uS(2000);                  /* Delay at least  2 mS                                         */
+   \   00000086   4FF4FA60           MOV      R0,#+2000
+   \   0000008A   BDE83240           POP      {R1,R4,R5,LR}
+   \   0000008E   ........           B.W      DispDly_uS
+    460          }
+    461          
+    462          /*$PAGE*/
+    463          /*
+    464          *********************************************************************************************************
+    465          *                                         DISPLAY AN ASCII STRING
+    466          *
+    467          * Description : This function is used to display an ASCII string on a line of the LCD display
+    468          * Arguments   : 'row'   is the row    position of the cursor in the LCD Display
+    469          *                       'row' can be a value from 0 to 'DispMaxRows - 1'
+    470          *               'col'   is the column position of the cursor in the LCD Display
+    471          *                       'col' can be a value from 0 to 'DispMaxCols - 1'
+    472          *               's'     is a pointer to the string to write to the display at
+    473          *                       the desired row/col.
+    474          * Returns     : none
+    475          *********************************************************************************************************
+    476          */
+    477          
+
+   \                                 In section .text, align 2, keep-with-next
+    478          void  DispStr (CPU_INT08U row, CPU_INT08U col, CPU_INT08U *s)
+    479          {
+   \                     DispStr:
+   \   00000000   F8B5               PUSH     {R3-R7,LR}
+   \   00000002   0646               MOV      R6,R0
+   \   00000004   0C46               MOV      R4,R1
+   \   00000006   1546               MOV      R5,R2
+    480              CPU_INT08U i;
+    481          
+    482          
+    483              if (row < DispMaxRows && col < DispMaxCols) {
+   \   00000008   ....               LDR.N    R7,??DataTable8  ;; DispMaxCols
+   \   0000000A   7878               LDRB     R0,[R7, #+1]
+   \   0000000C   8642               CMP      R6,R0
+   \   0000000E   1BD2               BCS.N    ??DispStr_0
+   \   00000010   3878               LDRB     R0,[R7, #+0]
+   \   00000012   8442               CMP      R4,R0
+   \   00000014   18D2               BCS.N    ??DispStr_0
+    484                  DispLock();
+   \   00000016   ........           BL       DispLock
+    485                  DispCursorSet(row, col);            /* Position cursor at ROW/COL                              */
+   \   0000001A   2146               MOV      R1,R4
+   \   0000001C   3046               MOV      R0,R6
+   \   0000001E   ........           BL       DispCursorSet
+    486                  DispSel(DISP_SEL_DATA_REG);
+   \   00000022   0120               MOVS     R0,#+1
+   \   00000024   ........           BL       DispSel
+    487                  i = col;                            /* Set counter to limit column to maximum allowable column */
+   \   00000028   05E0               B.N      ??DispStr_1
+    488                  while (i < DispMaxCols && *s) {     /* Write all chars within str + limit to DispMaxCols       */
+    489                      DispDataWr(*s++);               /* Send character to LCD display                           */
+   \                     ??DispStr_2:
+   \   0000002A   15F8010B           LDRB     R0,[R5], #+1
+   \   0000002E   ........           BL       DispDataWr
+    490                      i++;                            /* Increment limit counter                                 */
+   \   00000032   641C               ADDS     R4,R4,#+1
+   \   00000034   E4B2               UXTB     R4,R4
+    491                  }
+   \                     ??DispStr_1:
+   \   00000036   2046               MOV      R0,R4
+   \   00000038   3978               LDRB     R1,[R7, #+0]
+   \   0000003A   8842               CMP      R0,R1
+   \   0000003C   02D2               BCS.N    ??DispStr_3
+   \   0000003E   2878               LDRB     R0,[R5, #+0]
+   \   00000040   0028               CMP      R0,#+0
+   \   00000042   F2D1               BNE.N    ??DispStr_2
+    492                  DispUnlock();
+   \                     ??DispStr_3:
+   \   00000044   ........           BL       DispUnlock
+    493              }
+    494          }
+   \                     ??DispStr_0:
+   \   00000048   F1BD               POP      {R0,R4-R7,PC}    ;; return
+
+   \                                 In section .text, align 4, keep-with-next
+   \                     ??DataTable8:
+   \   00000000   ........           DC32     DispMaxCols
+
+   Maximum stack usage in bytes:
+
+     Function        .cstack
+     --------        -------
+     DispChar            16
+     DispClrLine         16
+     DispClrScr           8
+     DispCursorSet       16
+     DispDefChar         16
+     DispDummy            0
+     DispHorBar          24
+     DispHorBarInit       8
+     DispInit            16
+     DispStr             24
+     DispVertBar         16
+     DispVertBarInit      8
+
+
+   Section sizes:
+
+     Function/Label  Bytes
+     --------------  -----
+     DispMaxCols        2
+     DispMaxRows
+     DispHorBar1       40
+     DispHorBar2
+     DispHorBar3
+     DispHorBar4
+     DispHorBar5
+     DispVertBar1      64
+     DispVertBar2
+     DispVertBar3
+     DispVertBar4
+     DispVertBar5
+     DispVertBar6
+     DispVertBar7
+     DispVertBar8
+     DispChar          52
+     DispClrLine       66
+     DispClrScr        34
+     DispCursorSet    138
+     DispDefChar       62
+     DispDummy          2
+     DispHorBar        88
+     DispHorBarInit    60
+     DispVertBar       80
+     DispVertBarInit   88
+     DispInit         146
+     DispStr           74
+     ??DataTable8       4
+
+ 
+   2 bytes in section .bss
+ 104 bytes in section .data
+ 894 bytes in section .text
+ 
+ 894 bytes of CODE memory
+ 106 bytes of DATA memory
+
+Errors: none
+Warnings: none
